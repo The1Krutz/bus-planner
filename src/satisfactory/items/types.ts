@@ -1,5 +1,6 @@
 export const enum Item {
   IronIngot,
+  IronOre,
   IronPlate,
   IronRod,
   ReinforcedIronPlate,
