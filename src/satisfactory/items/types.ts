@@ -1,11 +1,17 @@
-export const enum Item {
-  IronIngot,
-  IronOre,
-  IronPlate,
-  IronRod,
-  ReinforcedIronPlate,
-  Screws,
-}
+import type { IronIngot } from './recipes/ironIngot';
+import type { IronPlate } from './recipes/ironPlate';
+import type { IronRod } from './recipes/ironRod';
+import type { IronOre } from './recipes/nonProductionItems';
+import type { ReinforcedIronPlate } from './recipes/reinforcedIronPlate';
+import type { Screws } from './recipes/screws';
+
+export type Item =
+  | typeof IronIngot
+  | typeof IronOre
+  | typeof IronPlate
+  | typeof IronRod
+  | typeof ReinforcedIronPlate
+  | typeof Screws;
 
 type ItemQuantity = {
   item: Item;
@@ -13,6 +19,7 @@ type ItemQuantity = {
 };
 
 export type Recipe = {
+  name: string;
   produces: ItemQuantity[];
   consumes: ItemQuantity[];
 };
