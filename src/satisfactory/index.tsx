@@ -1,12 +1,19 @@
-import { useState } from 'react';
-import { AllItems } from './items';
+import { useState, type ChangeEvent } from 'react';
+import { AllItems, AllRecipes } from './items';
+import { doesRecipeProduce } from './items/helpers';
+import type { Item } from './items/types';
 
 export function Satisfactory() {
   const [showAddProductionCell, setShowAddProductionCell] = useState(false);
+  const [producingItem, setProducingItem] = useState<Item>('unknown');
 
   function addNewProductionBlock() {
     console.log('adding new production block');
     setShowAddProductionCell(true);
+  }
+
+  function chooseProducingItem(event: ChangeEvent<HTMLSelectElement>) {
+    setProducingItem(event.target.value as Item);
   }
 
   return (
@@ -24,7 +31,7 @@ export function Satisfactory() {
           New production block
           <br />
           Choose product:
-          <select>
+          <select onChange={chooseProducingItem}>
             <option disabled key="default">
               Select a product
             </option>
@@ -34,6 +41,21 @@ export function Satisfactory() {
               </option>
             ))}
           </select>
+          <div>
+            Choose Recipe:
+            <select>
+              <option disabled key="default">
+                Select a recipe
+              </option>
+              {AllRecipes.filter((recipe) =>
+                doesRecipeProduce(recipe, producingItem),
+              ).map((recipe) => (
+                <option key={recipe.name} value={recipe.name}>
+                  {recipe.name}
+                </option>
+              ))}
+            </select>
+          </div>
         </div>
       )}
     </div>
