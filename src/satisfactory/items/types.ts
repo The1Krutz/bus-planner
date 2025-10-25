@@ -9,6 +9,7 @@ import type {
 } from './recipes/nonBusItems';
 import type { ReinforcedIronPlate } from './recipes/reinforcedIronPlate';
 import type { Screws } from './recipes/screws';
+import type { SteelBeam } from './recipes/steelBeam';
 
 /**
  * This includes evey string for all items. Including the non-production ones
@@ -22,6 +23,7 @@ export type Item =
   | typeof Plastic
   | typeof ReinforcedIronPlate
   | typeof Screws
+  | typeof SteelBeam
   | typeof SteelIngot;
 
 type ItemQuantity = {

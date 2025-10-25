@@ -1,6 +1,7 @@
 import { IronRod } from './ironRod';
 import { type Recipe } from '../types';
 import { IronIngot } from './nonBusItems';
+import { SteelBeam } from './steelBeam';
 
 export const Screws = 'Screws';
 
@@ -33,6 +34,21 @@ export const ScrewsRecipes: Recipe[] = [
       {
         item: IronIngot,
         rate: 12.5,
+      },
+    ],
+  },
+  {
+    name: 'Steel Screws',
+    produces: [
+      {
+        item: Screws,
+        rate: 260,
+      },
+    ],
+    consumes: [
+      {
+        item: SteelBeam,
+        rate: 5,
       },
     ],
   },
