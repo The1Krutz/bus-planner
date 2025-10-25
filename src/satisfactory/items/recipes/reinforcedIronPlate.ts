@@ -7,7 +7,7 @@ export const ReinforcedIronPlate = 'Reinforced Iron Plate';
 export const ReinforcedIronPlateRecipes: Recipe[] = [
   {
     name: 'Reinforced Iron Plate',
-    default:true,
+    default: true,
     produces: [
       {
         item: ReinforcedIronPlate,
@@ -25,4 +25,7 @@ export const ReinforcedIronPlateRecipes: Recipe[] = [
       },
     ],
   },
+  /**
+   * TODO - the rest of them
+   */
 ];
