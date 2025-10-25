@@ -1,6 +1,7 @@
 import type { IronPlate } from './recipes/ironPlate';
 import type { IronRod } from './recipes/ironRod';
 import type {
+  AluminumIngot,
   IronIngot,
   IronOre,
   Plastic,
@@ -13,6 +14,7 @@ import type { Screws } from './recipes/screws';
  * This includes evey string for all items. Including the non-production ones
  */
 export type Item =
+  | typeof AluminumIngot
   | typeof IronIngot
   | typeof IronOre
   | typeof IronPlate

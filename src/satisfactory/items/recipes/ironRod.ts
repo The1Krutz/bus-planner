@@ -1,5 +1,5 @@
 import { type Recipe } from '../types';
-import { IronIngot } from './nonBusItems';
+import { AluminumIngot, IronIngot, SteelIngot } from './nonBusItems';
 
 export const IronRod = 'Iron Rod';
 
@@ -17,6 +17,36 @@ export const IronRodRecipes: Recipe[] = [
       {
         item: IronIngot,
         rate: 15,
+      },
+    ],
+  },
+  {
+    name: 'AAluminum Rod',
+    produces: [
+      {
+        item: IronRod,
+        rate: 52.5,
+      },
+    ],
+    consumes: [
+      {
+        item: AluminumIngot,
+        rate: 7.5,
+      },
+    ],
+  },
+  {
+    name: 'Steel Rod',
+    produces: [
+      {
+        item: IronRod,
+        rate: 48,
+      },
+    ],
+    consumes: [
+      {
+        item: SteelIngot,
+        rate: 12,
       },
     ],
   },
