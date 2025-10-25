@@ -1,6 +1,6 @@
-import { IronIngot } from './ironIngot';
 import { IronRod } from './ironRod';
 import { type Recipe } from '../types';
+import { IronIngot } from './nonBusItems';
 
 export const Screws = 'Screws';
 

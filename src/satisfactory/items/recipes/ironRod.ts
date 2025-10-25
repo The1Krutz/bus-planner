@@ -1,5 +1,5 @@
-import { IronIngot } from './ironIngot';
 import { type Recipe } from '../types';
+import { IronIngot } from './nonBusItems';
 
 export const IronRod = 'Iron Rod';
 

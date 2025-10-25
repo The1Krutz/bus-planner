@@ -1,4 +1,3 @@
-import { IronIngot, IronIngotRecipes } from './recipes/ironIngot';
 import { IronPlate, IronPlateRecipes } from './recipes/ironPlate';
 import {
   ReinforcedIronPlate,
@@ -9,7 +8,6 @@ import { Screws, ScrewsRecipes } from './recipes/screws';
 import type { Item, Recipe } from './types';
 
 export const AllRecipes: Recipe[] = [
-  ...IronIngotRecipes,
   ...IronPlateRecipes,
   ...IronRodRecipes,
   ...ReinforcedIronPlateRecipes,
@@ -18,7 +16,6 @@ export const AllRecipes: Recipe[] = [
 
 export const AllItems: Item[] = [
   Screws,
-  IronIngot,
   IronPlate,
   IronRod,
   ReinforcedIronPlate,
