@@ -7,6 +7,7 @@ export const Screws = 'Screws';
 export const ScrewsRecipes: Recipe[] = [
   {
     name: 'Screws',
+    default: true,
     produces: [
       {
         item: Screws,

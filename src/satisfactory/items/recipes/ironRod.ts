@@ -6,6 +6,7 @@ export const IronRod = 'Iron Rod';
 export const IronRodRecipes: Recipe[] = [
   {
     name: 'Iron Rod',
+    default:true,
     produces: [
       {
         item: IronRod,

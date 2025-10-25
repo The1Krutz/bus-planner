@@ -6,7 +6,6 @@ import type { ReinforcedIronPlate } from './recipes/reinforcedIronPlate';
 import type { Screws } from './recipes/screws';
 
 export type Item =
-  | 'unknown'
   | typeof IronIngot
   | typeof IronOre
   | typeof IronPlate
@@ -21,6 +20,7 @@ type ItemQuantity = {
 
 export type Recipe = {
   name: string;
+  default?: boolean;
   produces: ItemQuantity[];
   consumes: ItemQuantity[];
 };

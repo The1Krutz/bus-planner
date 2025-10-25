@@ -1,19 +1,19 @@
-import { useState, type ChangeEvent } from 'react';
-import { AllItems, AllRecipes } from './items';
-import { doesRecipeProduce } from './items/helpers';
-import type { Item } from './items/types';
+import { useState } from 'react';
+import { AddProductionBlock } from './addProductionBlock';
+import type { Recipe } from './items/types';
 
 export function Satisfactory() {
-  const [showAddProductionCell, setShowAddProductionCell] = useState(false);
-  const [producingItem, setProducingItem] = useState<Item>('unknown');
+  const [addingProductionCell, setAddingProductionCell] = useState(false);
 
   function addNewProductionBlock() {
-    console.log('adding new production block');
-    setShowAddProductionCell(true);
+    setAddingProductionCell(true);
   }
 
-  function chooseProducingItem(event: ChangeEvent<HTMLSelectElement>) {
-    setProducingItem(event.target.value as Item);
+  function addNewProduction(recipe: Recipe, quantity: number) {
+    console.log('Satisfactory.addNewProduction', recipe, quantity);
+    // TODO - add this recipe/quantity to the overall faactory production
+
+    setAddingProductionCell(false);
   }
 
   return (
@@ -26,37 +26,8 @@ export function Satisfactory() {
         </div>
       </div>
 
-      {showAddProductionCell && (
-        <div>
-          New production block
-          <br />
-          Choose product:
-          <select onChange={chooseProducingItem}>
-            <option disabled key="default">
-              Select a product
-            </option>
-            {AllItems.map((item) => (
-              <option key={item} value={item}>
-                {item}
-              </option>
-            ))}
-          </select>
-          <div>
-            Choose Recipe:
-            <select>
-              <option disabled key="default">
-                Select a recipe
-              </option>
-              {AllRecipes.filter((recipe) =>
-                doesRecipeProduce(recipe, producingItem),
-              ).map((recipe) => (
-                <option key={recipe.name} value={recipe.name}>
-                  {recipe.name}
-                </option>
-              ))}
-            </select>
-          </div>
-        </div>
+      {addingProductionCell && (
+        <AddProductionBlock onFinalize={addNewProduction} />
       )}
     </div>
   );

@@ -6,6 +6,7 @@ export const IronIngot = 'Iron Ingot';
 export const IronIngotRecipes: Recipe[] = [
   {
     name: 'Iron Ingot',
+    default:true,
     produces: [
       {
         item: IronIngot,
