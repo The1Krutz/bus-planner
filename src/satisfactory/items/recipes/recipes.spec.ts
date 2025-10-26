@@ -6,12 +6,27 @@ describe('Recipe validation', () => {
   describe('Costs', () => {
     AllRecipes.forEach((recipe) => {
       it(`${recipe.name} produces >0 items`, () => {
+        expect(recipe.produces.length).toBeGreaterThanOrEqual(1);
         expect(recipe.produces.every((z) => z.rate > 0)).toBeTruthy();
       });
 
       it(`${recipe.name} comsumes >0 items`, () => {
+        expect(recipe.consumes.length).toBeGreaterThanOrEqual(1);
         expect(recipe.consumes.every((z) => z.rate > 0)).toBeTruthy();
       });
+    });
+  });
+
+  describe('Names', () => {
+    it('All recipe names are unique', () => {
+      const allNames = AllRecipes.map((z) => z.name);
+      const allUniqueNames = new Set(allNames);
+
+      allUniqueNames.forEach((z) => {
+        allNames.splice(allNames.indexOf(z), 1);
+      });
+
+      expect(allNames).toHaveLength(0);
     });
   });
 

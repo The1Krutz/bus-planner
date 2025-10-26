@@ -1,5 +1,5 @@
 import type { Recipe } from '..';
-import { SteelIngot } from './importOnlyItems';
+import { Concrete, IronIngot, SteelIngot } from './importOnlyItems';
 
 export const SteelPipe = 'Steel Pipe';
 
@@ -25,27 +25,31 @@ export const SteelPipeRecipes: Recipe[] = [
     produces: [
       {
         item: SteelPipe,
-        rate: 20,
+        rate: 25,
       },
     ],
     consumes: [
       {
-        item: SteelIngot,
-        rate: 30,
+        item: IronIngot,
+        rate: 100,
       },
     ],
   },
   {
-    name: 'Steel Pipe',
+    name: 'Molded Steel Pipe',
     produces: [
       {
         item: SteelPipe,
-        rate: 20,
+        rate: 50,
       },
     ],
     consumes: [
       {
         item: SteelIngot,
+        rate: 50,
+      },
+      {
+        item: Concrete,
         rate: 30,
       },
     ],
