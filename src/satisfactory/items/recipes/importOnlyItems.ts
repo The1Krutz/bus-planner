@@ -11,3 +11,6 @@ export const IronOre = 'Iron Ore';
 export const Plastic = 'Plastic';
 export const Rubber = 'Rubber';
 export const SteelIngot = 'Steel Ingot';
+
+export const HeavyOilResidue = 'Heavy Oil Residue';
+export const Quickwire = 'Quickwire';
