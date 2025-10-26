@@ -1,5 +1,5 @@
 import { useState, type ChangeEvent } from 'react';
-import { AllItems, AllRecipes } from './items';
+import { AllBusItems, AllRecipes } from './items';
 import { doesRecipeProduce } from './items/helpers';
 import type { Item, Recipe } from './items/types';
 import { Screws, ScrewsRecipes } from './items/recipes/screws';
@@ -67,7 +67,7 @@ export function AddProductionBlock({ onFinalize }: IAddProductionProps) {
             <option disabled key="default">
               Select a product
             </option>
-            {AllItems.map((item) => (
+            {AllBusItems.map((item) => (
               <option key={item} value={item}>
                 {item}
               </option>
