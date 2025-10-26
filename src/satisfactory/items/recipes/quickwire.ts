@@ -1,5 +1,5 @@
 import { type Recipe } from '../types';
-import { Cable } from './cable';
+import { CateriumIngot, CopperIngot } from './importOnlyItems';
 
 export const Quickwire = 'Quickwire';
 
@@ -10,13 +10,32 @@ export const QuickwireRecipes: Recipe[] = [
     produces: [
       {
         item: Quickwire,
-        rate: 0,
+        rate: 60,
       },
     ],
     consumes: [
       {
-        item: Cable,
-        rate: 0,
+        item: CateriumIngot,
+        rate: 12,
+      },
+    ],
+  },
+  {
+    name: 'Fused Quickwire',
+    produces: [
+      {
+        item: Quickwire,
+        rate: 90,
+      },
+    ],
+    consumes: [
+      {
+        item: CateriumIngot,
+        rate: 7.5,
+      },
+      {
+        item: CopperIngot,
+        rate: 37.5,
       },
     ],
   },
