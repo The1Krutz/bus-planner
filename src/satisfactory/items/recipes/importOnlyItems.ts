@@ -6,4 +6,5 @@ export const AluminumIngot = 'Aluminum Ingot';
 export const IronIngot = 'Iron Ingot';
 export const IronOre = 'Iron Ore';
 export const Plastic = 'Plastic';
+export const Rubber = 'Rubber';
 export const SteelIngot = 'Steel Ingot';

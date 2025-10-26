@@ -3,7 +3,7 @@ import { doesRecipeProduce } from './helpers';
 import { type Recipe } from './types';
 import { IronPlate } from './recipes/ironPlate';
 import { Screws } from './recipes/screws';
-import { IronIngot } from './recipes/nonBusItems';
+import { IronIngot } from './recipes/importOnlyItems';
 
 describe('Item Helpers', () => {
   describe('doesRecipeProduce', () => {
