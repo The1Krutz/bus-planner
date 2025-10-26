@@ -1,5 +1,6 @@
 import { type Recipe } from '../types';
-import { HeavyOilResidue, Quickwire, Rubber } from './importOnlyItems';
+import { HeavyOilResidue, Rubber } from './importOnlyItems';
+import { Quickwire } from './quickwire';
 import { Wire } from './wire';
 
 export const Cable = 'Cable';
