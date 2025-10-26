@@ -2,7 +2,9 @@ import type { IronPlate } from './recipes/ironPlate';
 import type { IronRod } from './recipes/ironRod';
 import type {
   AluminumIngot,
+  CateriumIngot,
   Concrete,
+  CopperIngot,
   IronIngot,
   IronOre,
   Plastic,
@@ -19,7 +21,9 @@ import type { Wire } from './recipes/wire';
  */
 export type Item =
   | typeof AluminumIngot
+  | typeof CateriumIngot
   | typeof Concrete
+  | typeof CopperIngot
   | typeof IronIngot
   | typeof IronOre
   | typeof IronPlate

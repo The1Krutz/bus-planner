@@ -3,9 +3,11 @@
  * Ores, etc
  */
 export const AluminumIngot = 'Aluminum Ingot';
+export const CateriumIngot = 'Caterium Ingot';
+export const Concrete = 'Concrete';
+export const CopperIngot = 'Copper Ingot';
 export const IronIngot = 'Iron Ingot';
 export const IronOre = 'Iron Ore';
 export const Plastic = 'Plastic';
 export const Rubber = 'Rubber';
 export const SteelIngot = 'Steel Ingot';
-export const Concrete = 'Concrete';
