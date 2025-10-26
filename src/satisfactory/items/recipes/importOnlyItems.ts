@@ -6,10 +6,10 @@ export const AluminumIngot = 'Aluminum Ingot';
 export const CateriumIngot = 'Caterium Ingot';
 export const Concrete = 'Concrete';
 export const CopperIngot = 'Copper Ingot';
+export const HeavyOilResidue = 'Heavy Oil Residue';
 export const IronIngot = 'Iron Ingot';
 export const IronOre = 'Iron Ore';
+export const PackagedNitrogenGas = 'Packaged Nitrogen Gas';
 export const Plastic = 'Plastic';
 export const Rubber = 'Rubber';
 export const SteelIngot = 'Steel Ingot';
-
-export const HeavyOilResidue = 'Heavy Oil Residue';

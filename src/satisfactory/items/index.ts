@@ -101,6 +101,7 @@ import type {
   HeavyOilResidue,
   IronIngot,
   IronOre,
+  PackagedNitrogenGas,
   Plastic,
   Rubber,
   SteelIngot,
@@ -117,6 +118,7 @@ export type ImportItems =
   | typeof HeavyOilResidue
   | typeof IronIngot
   | typeof IronOre
+  | typeof PackagedNitrogenGas
   | typeof Plastic
   | typeof Rubber
   | typeof SteelIngot;
