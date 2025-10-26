@@ -1,4 +1,4 @@
-import { type Recipe } from '../types';
+import type { Recipe } from '..';
 import { AluminumIngot, Concrete, SteelIngot } from './importOnlyItems';
 
 export const SteelBeam = 'Steel Beam';

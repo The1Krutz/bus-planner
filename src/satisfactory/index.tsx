@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { AddProductionBlock } from './addProductionBlock';
-import type { Recipe } from './items/types';
+import type { Recipe } from './items';
 
 export function Satisfactory() {
   const [addingProductionCell, setAddingProductionCell] = useState(false);

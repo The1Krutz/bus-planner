@@ -1,4 +1,4 @@
-import { type Recipe } from '../types';
+import type { Recipe } from '..';
 import { HeavyOilResidue, Rubber } from './importOnlyItems';
 import { Quickwire } from './quickwire';
 import { Wire } from './wire';

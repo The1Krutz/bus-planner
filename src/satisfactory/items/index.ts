@@ -5,7 +5,6 @@ import {
 } from './recipes/reinforcedIronPlate';
 import { IronRod, IronRodRecipes } from './recipes/ironRod';
 import { Screws, ScrewsRecipes } from './recipes/screws';
-import type { Item, Recipe } from './types';
 import {
   AdaptiveControlUnit,
   AdaptiveControlUnitRecipes,
@@ -94,6 +93,111 @@ import {
   VersatileFrameworkRecipes,
 } from './recipes/versatileFramework';
 import { Wire, WireRecipes } from './recipes/wire';
+import type {
+  AluminumIngot,
+  CateriumIngot,
+  Concrete,
+  CopperIngot,
+  HeavyOilResidue,
+  IronIngot,
+  IronOre,
+  Plastic,
+  Rubber,
+  SteelIngot,
+} from './recipes/importOnlyItems';
+
+/**
+ * Non-bus production items. Always imported
+ */
+export type ImportItems =
+  | typeof AluminumIngot
+  | typeof CateriumIngot
+  | typeof Concrete
+  | typeof CopperIngot
+  | typeof HeavyOilResidue
+  | typeof IronIngot
+  | typeof IronOre
+  | typeof Plastic
+  | typeof Rubber
+  | typeof SteelIngot;
+
+/**
+ * Bus production items, minus the space elevator parts
+ */
+export type BusItems =
+  | typeof AdaptiveControlUnit
+  | typeof AiLimiter
+  | typeof AlcladAluminumSheet
+  | typeof AluminumCasing
+  | typeof AssemblyDirectorSystem
+  | typeof AutomatedWiring
+  | typeof Battery
+  | typeof Cable
+  | typeof CircuitBoard
+  | typeof Computer
+  | typeof CoolingSystem
+  | typeof CopperPowder
+  | typeof CopperSheet
+  | typeof CrystalOscillator
+  | typeof ElectromagneticControlRod
+  | typeof EncasedIndustrialBeam
+  | typeof FicsiteTrigon
+  | typeof FusedModularFrame
+  | typeof HeatSink
+  | typeof HeavyModularFrame
+  | typeof HighSpeedConnector
+  | typeof IronPlate
+  | typeof IronRod
+  | typeof ModularEngine
+  | typeof ModularFrame
+  | typeof Motor
+  | typeof NeuralQuantumProcessor
+  | typeof NuclearPasta
+  | typeof PressureConversionCube
+  | typeof Quickwire
+  | typeof RadioControlUnit
+  | typeof ReinforcedIronPlate
+  | typeof Rotor
+  | typeof Screws
+  | typeof SmartPlating
+  | typeof Stator
+  | typeof SteelBeam
+  | typeof SteelPipe
+  | typeof Supercomputer
+  | typeof SuperpositionOscillator
+  | typeof TimeCrystal
+  | typeof TurboMotor
+  | typeof VersatileFramework
+  | typeof Wire;
+
+/**
+ * Bus production items, only the space elevator parts
+ * TODO - There are more of these
+ */
+export type SpaceElevatorItems =
+  | typeof AdaptiveControlUnit
+  | typeof AssemblyDirectorSystem
+  | typeof AutomatedWiring
+  | typeof ModularEngine
+  | typeof SmartPlating
+  | typeof VersatileFramework;
+
+/**
+ * Combined all items
+ */
+export type Item = ImportItems | BusItems | SpaceElevatorItems;
+
+type ItemQuantity = {
+  item: Item;
+  rate: number;
+};
+
+export type Recipe = {
+  name: string;
+  default?: boolean;
+  produces: ItemQuantity[];
+  consumes: ItemQuantity[];
+};
 
 export const AllRecipes: Recipe[] = [
   ...AdaptiveControlUnitRecipes,

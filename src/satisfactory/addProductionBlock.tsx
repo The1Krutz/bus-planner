@@ -1,7 +1,6 @@
 import { useState, type ChangeEvent } from 'react';
-import { AllBusItems, AllRecipes } from './items';
+import { AllBusItems, AllRecipes, type Item, type Recipe } from './items';
 import { doesRecipeProduce } from './items/helpers';
-import type { Item, Recipe } from './items/types';
 import { Screws, ScrewsRecipes } from './items/recipes/screws';
 
 interface IAddProductionProps {

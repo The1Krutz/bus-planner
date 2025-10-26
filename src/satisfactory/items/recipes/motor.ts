@@ -1,4 +1,4 @@
-import { type Recipe } from '../types';
+import type { Recipe } from '..';
 import { CrystalOscillator } from './crystalOscillator';
 import { ElectromagneticControlRod } from './electromagneticControlRod';
 import { Rotor } from './rotor';

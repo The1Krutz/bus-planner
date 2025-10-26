@@ -1,6 +1,6 @@
 import { IronPlate } from './ironPlate';
 import { Screws } from './screws';
-import { type Recipe } from '../types';
+import type { Recipe } from '..';
 import { Rubber } from './importOnlyItems';
 import { Wire } from './wire';
 

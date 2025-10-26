@@ -1,4 +1,4 @@
-import { type Recipe } from '../types';
+import type { Recipe } from '..';
 import { Cable } from './cable';
 
 export const CoolingSystem = 'Cooling System';

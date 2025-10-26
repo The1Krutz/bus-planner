@@ -1,5 +1,5 @@
 import { IronRod } from './ironRod';
-import { type Recipe } from '../types';
+import type { Recipe } from '..';
 import { IronIngot } from './importOnlyItems';
 import { SteelBeam } from './steelBeam';
 
