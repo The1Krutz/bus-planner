@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { doesRecipeProduce } from './helpers';
-import { type Recipe } from './types';
+import type { Recipe } from '.';
 import { IronPlate } from './recipes/ironPlate';
 import { Screws } from './recipes/screws';
 import { IronIngot } from './recipes/importOnlyItems';
