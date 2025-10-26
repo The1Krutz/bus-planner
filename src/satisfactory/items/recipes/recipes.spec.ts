@@ -22,8 +22,8 @@ describe('Recipe validation', () => {
       const allNames = AllRecipes.map((z) => z.name);
       const allUniqueNames = new Set(allNames);
 
-      allUniqueNames.forEach((z) => {
-        allNames.splice(allNames.indexOf(z), 1);
+      allUniqueNames.forEach((name) => {
+        allNames.splice(allNames.indexOf(name), 1);
       });
 
       expect(allNames).toHaveLength(0);
