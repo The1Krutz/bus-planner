@@ -2,14 +2,17 @@ import { useState, type ChangeEvent } from 'react';
 import { AllBusItems, AllRecipes, type Item, type Recipe } from './items';
 import { doesRecipeProduce } from './items/helpers';
 import { Screws } from './items/recipes/screws';
+import { RecipePicker } from './recipePicker';
 
 interface IProductionRowProps {
+  blockId: string;
   initialRecipe: Recipe;
   initialQuantity: number;
   onUpdate: (recipe: Recipe, quantity: number) => void;
 }
 
 export function ProductionRow({
+  blockId,
   initialRecipe,
   initialQuantity,
   onUpdate,
@@ -26,7 +29,7 @@ export function ProductionRow({
     setDefaultRecipe(itemName);
   }
 
-  function selectRecipe2(recipe: Recipe) {
+  function selectRecipe(recipe: Recipe) {
     setSelectedRecipe(recipe);
 
     // pass update to higher
@@ -46,10 +49,6 @@ export function ProductionRow({
       doesRecipeProduce(recipe, item),
     ).find((z) => z.default);
     setSelectedRecipe(recipe!);
-  }
-
-  function isRecipeSelected(recipe: Recipe): boolean {
-    return recipe.name === selectedRecipe.name;
   }
 
   return (
@@ -93,49 +92,11 @@ export function ProductionRow({
             flexDirection: 'column',
           }}
         >
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'row',
-            }}
-          >
-            {AllRecipes.filter((recipe) =>
-              doesRecipeProduce(recipe, selectedItem),
-            ).map((recipe) => (
-              <div>
-                <div>
-                  <input
-                    key={recipe.name}
-                    id={recipe.name}
-                    type="radio"
-                    checked={isRecipeSelected(recipe)}
-                    onChange={() => selectRecipe2(recipe)}
-                  />
-                  <label htmlFor={recipe.name}>{recipe.name}</label>
-                </div>
-
-                <div style={{ paddingLeft: '32px' }}>
-                  {recipe.produces.map((z) => (
-                    <>
-                      <span>
-                        +{z.rate} {z.item}
-                      </span>
-                      <br />
-                    </>
-                  ))}
-                  <hr />
-                  {recipe.consumes.map((z) => (
-                    <>
-                      <span>
-                        {z.rate * -1} {z.item}
-                      </span>
-                      <br />
-                    </>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
+          <RecipePicker
+            blockId={blockId}
+            item={selectedItem}
+            onUpdate={selectRecipe}
+          />
         </div>
 
         <div

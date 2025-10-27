@@ -32,6 +32,7 @@ export function Satisfactory() {
     return (
       <div key={block.id}>
         <ProductionRow
+          blockId={block.id}
           initialRecipe={block.recipe}
           initialQuantity={block.quantity}
           onUpdate={updateProductionRow}
