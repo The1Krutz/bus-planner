@@ -95,11 +95,15 @@ import {
 import { Wire, WireRecipes } from './recipes/wire';
 import {
   AluminaSolution,
+  Coal,
+  CrudeOil,
   DarkMatterResidue,
   ExcitedPhotonicMatter,
   Fuel,
+  Limestone,
   NitricAcid,
   NitrogenGas,
+  PackagedTurbofuel,
   PetroleumCoke,
   QuartzCrystal,
   ReanimatedSam,
@@ -120,6 +124,11 @@ import {
   type SteelIngot,
 } from './recipes/importOnlyItems';
 import { FicsiteIngot, FicsiteIngotRecipes } from './recipes/ficsiteIngot';
+import {
+  DarkMatterCrystal,
+  DarkMatterCrystalRecipes,
+} from './recipes/darkMatterCrystal';
+import { Diamonds, DiamondsRecipes } from './recipes/diamonds';
 
 /**
  * Non-bus production items. Always imported
@@ -144,6 +153,10 @@ export type ImportItems =
   | typeof Fuel
   | typeof ReanimatedSam
   | typeof Rubber
+  | typeof Coal
+  | typeof Limestone
+  | typeof CrudeOil
+  | typeof PackagedTurbofuel
   | typeof Silica
   | typeof SteelIngot
   | typeof Sulfur
@@ -178,6 +191,8 @@ export type BusItems =
   | typeof HighSpeedConnector
   | typeof IronPlate
   | typeof IronRod
+  | typeof Diamonds
+  | typeof DarkMatterCrystal
   | typeof ModularEngine
   | typeof ModularFrame
   | typeof Motor
@@ -247,8 +262,10 @@ export const AllRecipes: Recipe[] = [
   ...ElectromagneticControlRodRecipes,
   ...EncasedIndustrialBeamRecipes,
   ...FicsiteIngotRecipes,
+  ...DiamondsRecipes,
   ...FicsiteTrigonRecipes,
   ...FusedModularFrameRecipes,
+  ...DarkMatterCrystalRecipes,
   ...HeatSinkRecipes,
   ...HeavyModularFrameRecipes,
   ...HighSpeedConnectorRecipes,
@@ -289,8 +306,10 @@ export const AllBusItems: Item[] = [
   CircuitBoard,
   Computer,
   CoolingSystem,
+  Diamonds,
   CopperPowder,
   CopperSheet,
+  DarkMatterCrystal,
   CrystalOscillator,
   ElectromagneticControlRod,
   EncasedIndustrialBeam,
