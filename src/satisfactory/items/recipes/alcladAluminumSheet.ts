@@ -1,5 +1,5 @@
 import type { Recipe } from '..';
-import { Cable } from './cable';
+import { AluminumIngot, CopperIngot } from './importOnlyItems';
 
 export const AlcladAluminumSheet = 'Alclad Aluminum Sheet';
 
@@ -10,13 +10,17 @@ export const AlcladAluminumSheetRecipes: Recipe[] = [
     produces: [
       {
         item: AlcladAluminumSheet,
-        rate: 0,
+        rate: 30,
       },
     ],
     consumes: [
       {
-        item: Cable,
-        rate: 0,
+        item: AluminumIngot,
+        rate: 30,
+      },
+      {
+        item: CopperIngot,
+        rate: 10,
       },
     ],
   },
