@@ -95,6 +95,7 @@ import {
 import { Wire, WireRecipes } from './recipes/wire';
 import {
   AluminaSolution,
+  PetroleumCoke,
   QuartzCrystals,
   Silica,
   Sulfur,
@@ -126,6 +127,7 @@ export type ImportItems =
   | typeof IronIngot
   | typeof IronOre
   | typeof PackagedNitrogenGas
+  | typeof PetroleumCoke
   | typeof Plastic
   | typeof QuartzCrystals
   | typeof Rubber
