@@ -19,7 +19,6 @@ export const CoolingSystemRecipes: Recipe[] = [
   },
   {
     name: 'Cooling Device',
-    default: true,
     produces: [{ item: CoolingSystem, rate: 5 }],
     consumes: [
       { item: HeatSink, rate: 10 },

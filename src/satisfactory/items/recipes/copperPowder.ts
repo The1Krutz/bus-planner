@@ -1,5 +1,5 @@
 import type { Recipe } from '..';
-import { Cable } from './cable';
+import { CopperIngot } from './importOnlyItems';
 
 export const CopperPowder = 'Copper Powder';
 
@@ -7,17 +7,7 @@ export const CopperPowderRecipes: Recipe[] = [
   {
     name: 'Copper Powder',
     default: true,
-    produces: [
-      {
-        item: CopperPowder,
-        rate: 0,
-      },
-    ],
-    consumes: [
-      {
-        item: Cable,
-        rate: 0,
-      },
-    ],
+    produces: [{ item: CopperPowder, rate: 50 }],
+    consumes: [{ item: CopperIngot, rate: 300 }],
   },
 ];
