@@ -97,6 +97,8 @@ import {
   AluminaSolution,
   DarkMatterResidue,
   ExcitedPhotonicMatter,
+  Fuel,
+  NitricAcid,
   NitrogenGas,
   PetroleumCoke,
   QuartzCrystal,
@@ -138,6 +140,8 @@ export type ImportItems =
   | typeof PetroleumCoke
   | typeof Plastic
   | typeof QuartzCrystal
+  | typeof NitricAcid
+  | typeof Fuel
   | typeof ReanimatedSam
   | typeof Rubber
   | typeof Silica

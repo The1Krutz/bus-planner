@@ -24,3 +24,5 @@ export const Water = 'Water';
 export const ExcitedPhotonicMatter = 'Excited Photonic Matter';
 export const NitrogenGas = 'Nitrogen Gas';
 export const ReanimatedSam = 'Reanimated Sam';
+export const NitricAcid = 'Nitric Acid';
+export const Fuel = 'Fuel';
