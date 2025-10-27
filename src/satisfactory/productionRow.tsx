@@ -26,9 +26,8 @@ export function ProductionRow({
     setDefaultRecipe(itemName);
   }
 
-  function selectRecipe(event: ChangeEvent<HTMLSelectElement>) {
-    const recipe = AllRecipes.find((z) => z.name === event.target.value);
-    setSelectedRecipe(recipe!);
+  function selectRecipe2(recipe: Recipe) {
+    setSelectedRecipe(recipe);
 
     // pass update to higher
     onUpdate(selectedRecipe, quantity);
@@ -47,6 +46,10 @@ export function ProductionRow({
       doesRecipeProduce(recipe, item),
     ).find((z) => z.default);
     setSelectedRecipe(recipe!);
+  }
+
+  function isRecipeSelected(recipe: Recipe): boolean {
+    return recipe.name === selectedRecipe.name;
   }
 
   return (
@@ -70,6 +73,7 @@ export function ProductionRow({
             flexDirection: 'column',
           }}
         >
+          {/* Choosing a product here is just a filter for the recipes in the next step. The recipe also contains this as a `produces` */}
           <span>Choose product:</span>
           <select value={selectedItem} onChange={selectItem}>
             <option disabled key="default">
@@ -89,17 +93,49 @@ export function ProductionRow({
             flexDirection: 'column',
           }}
         >
-          <span>Choose Recipe: (TODO - replace with radio buttons?)</span>
-          <select value={selectedRecipe.name} onChange={selectRecipe}>
-            <option disabled>Select a recipe</option>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+            }}
+          >
             {AllRecipes.filter((recipe) =>
               doesRecipeProduce(recipe, selectedItem),
             ).map((recipe) => (
-              <option key={recipe.name} value={recipe.name}>
-                {recipe.name}
-              </option>
+              <div>
+                <div>
+                  <input
+                    key={recipe.name}
+                    id={recipe.name}
+                    type="radio"
+                    checked={isRecipeSelected(recipe)}
+                    onChange={() => selectRecipe2(recipe)}
+                  />
+                  <label htmlFor={recipe.name}>{recipe.name}</label>
+                </div>
+
+                <div style={{ paddingLeft: '32px' }}>
+                  {recipe.produces.map((z) => (
+                    <>
+                      <span>
+                        +{z.rate} {z.item}
+                      </span>
+                      <br />
+                    </>
+                  ))}
+                  <hr />
+                  {recipe.consumes.map((z) => (
+                    <>
+                      <span>
+                        {z.rate * -1} {z.item}
+                      </span>
+                      <br />
+                    </>
+                  ))}
+                </div>
+              </div>
             ))}
-          </select>
+          </div>
         </div>
 
         <div
