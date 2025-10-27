@@ -11,32 +11,14 @@ export const SuperpositionOscillatorRecipes: Recipe[] = [
     name: 'Superposition Oscillator',
     default: true,
     produces: [
-      {
-        item: SuperpositionOscillator,
-        rate: 5,
-      },
-      {
-        item: DarkMatterResidue,
-        rate: 125,
-      },
+      { item: SuperpositionOscillator, rate: 5 },
+      { item: DarkMatterResidue, rate: 125 },
     ],
     consumes: [
-      {
-        item: DarkMatterCrystal,
-        rate: 30,
-      },
-      {
-        item: CrystalOscillator,
-        rate: 5,
-      },
-      {
-        item: AlcladAluminumSheet,
-        rate: 45,
-      },
-      {
-        item: ExcitedPhotonicMatter,
-        rate: 125,
-      },
+      { item: DarkMatterCrystal, rate: 30 },
+      { item: CrystalOscillator, rate: 5 },
+      { item: AlcladAluminumSheet, rate: 45 },
+      { item: ExcitedPhotonicMatter, rate: 125 },
     ],
   },
 ];
