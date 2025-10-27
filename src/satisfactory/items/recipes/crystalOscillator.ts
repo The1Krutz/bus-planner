@@ -18,7 +18,7 @@ export const CrystalOscillatorRecipes: Recipe[] = [
     ],
   },
   {
-    name: 'Crystal Oscillator',
+    name: 'Insulated Crystal Oscillator',
     produces: [{ item: CrystalOscillator, rate: 1.875 }],
     consumes: [
       { item: QuartzCrystal, rate: 18.75 },

@@ -100,6 +100,7 @@ import {
   NitrogenGas,
   PetroleumCoke,
   QuartzCrystal,
+  ReanimatedSam,
   Silica,
   Sulfur,
   SulfuricAcid,
@@ -116,6 +117,7 @@ import {
   type Rubber,
   type SteelIngot,
 } from './recipes/importOnlyItems';
+import { FicsiteIngot, FicsiteIngotRecipes } from './recipes/ficsiteIngot';
 
 /**
  * Non-bus production items. Always imported
@@ -136,6 +138,7 @@ export type ImportItems =
   | typeof PetroleumCoke
   | typeof Plastic
   | typeof QuartzCrystal
+  | typeof ReanimatedSam
   | typeof Rubber
   | typeof Silica
   | typeof SteelIngot
@@ -163,6 +166,7 @@ export type BusItems =
   | typeof CrystalOscillator
   | typeof ElectromagneticControlRod
   | typeof EncasedIndustrialBeam
+  | typeof FicsiteIngot
   | typeof FicsiteTrigon
   | typeof FusedModularFrame
   | typeof HeatSink
@@ -238,6 +242,7 @@ export const AllRecipes: Recipe[] = [
   ...CrystalOscillatorRecipes,
   ...ElectromagneticControlRodRecipes,
   ...EncasedIndustrialBeamRecipes,
+  ...FicsiteIngotRecipes,
   ...FicsiteTrigonRecipes,
   ...FusedModularFrameRecipes,
   ...HeatSinkRecipes,
@@ -285,6 +290,7 @@ export const AllBusItems: Item[] = [
   CrystalOscillator,
   ElectromagneticControlRod,
   EncasedIndustrialBeam,
+  FicsiteIngot,
   FicsiteTrigon,
   FusedModularFrame,
   HeatSink,

@@ -1,5 +1,5 @@
 import type { Recipe } from '..';
-import { Cable } from './cable';
+import { FicsiteIngot } from './ficsiteIngot';
 
 export const FicsiteTrigon = 'Ficsite Trigon';
 
@@ -7,17 +7,7 @@ export const FicsiteTrigonRecipes: Recipe[] = [
   {
     name: 'Ficsite Trigon',
     default: true,
-    produces: [
-      {
-        item: FicsiteTrigon,
-        rate: 0,
-      },
-    ],
-    consumes: [
-      {
-        item: Cable,
-        rate: 0,
-      },
-    ],
+    produces: [{ item: FicsiteTrigon, rate: 30 }],
+    consumes: [{ item: FicsiteIngot, rate: 10 }],
   },
 ];
