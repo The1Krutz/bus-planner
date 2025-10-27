@@ -1,5 +1,6 @@
 import type { Recipe } from '..';
-import { Cable } from './cable';
+import { AdaptiveControlUnit } from './adaptiveControlUnit';
+import { Supercomputer } from './supercomputer';
 
 export const AssemblyDirectorSystem = 'Assembly Director System';
 
@@ -10,13 +11,17 @@ export const AssemblyDirectorSystemRecipes: Recipe[] = [
     produces: [
       {
         item: AssemblyDirectorSystem,
-        rate: 0,
+        rate: 0.75,
       },
     ],
     consumes: [
       {
-        item: Cable,
-        rate: 0,
+        item: AdaptiveControlUnit,
+        rate: 1.5,
+      },
+      {
+        item: Supercomputer,
+        rate: 0.75,
       },
     ],
   },

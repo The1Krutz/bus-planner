@@ -94,8 +94,12 @@ import {
 } from './recipes/versatileFramework';
 import { Wire, WireRecipes } from './recipes/wire';
 import {
+  AluminaSolution,
   QuartzCrystals,
   Silica,
+  Sulfur,
+  SulfuricAcid,
+  Water,
   type AluminumIngot,
   type CateriumIngot,
   type Concrete,
@@ -113,6 +117,7 @@ import {
  * Non-bus production items. Always imported
  */
 export type ImportItems =
+  | typeof AluminaSolution
   | typeof AluminumIngot
   | typeof CateriumIngot
   | typeof Concrete
@@ -125,7 +130,10 @@ export type ImportItems =
   | typeof QuartzCrystals
   | typeof Rubber
   | typeof Silica
-  | typeof SteelIngot;
+  | typeof SteelIngot
+  | typeof Sulfur
+  | typeof SulfuricAcid
+  | typeof Water;
 
 /**
  * Bus production items, minus the space elevator parts
