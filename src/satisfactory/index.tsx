@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { ProductionRow } from './productionRow';
 import { ScrewsRecipes } from './items/recipes/screws';
 import type { IProductionBlock } from './types';
+import { ProductionOverview } from './productionOverview';
 
 function getUID() {
   // Get the timestamp and convert
@@ -24,22 +25,23 @@ export function Satisfactory() {
     setProductionBlocks([...productionBlocks, newBlock]);
   }
 
-  function updateProductionRow() {
-    console.log('satisfactory.index.updateProductionRow');
+  function updateProductionRow(update: IProductionBlock) {
+    const blocksCopy = [...productionBlocks];
+    const updateIndex = blocksCopy.findIndex((z) => z.id === update.id);
+
+    blocksCopy[updateIndex] = update;
+
+    setProductionBlocks(blocksCopy);
   }
 
   const allProductionBlocks = productionBlocks.map((block) => {
     return (
       <div key={block.id}>
-        <ProductionRow
-          blockId={block.id}
-          initialRecipe={block.recipe}
-          initialQuantity={block.quantity}
-          onUpdate={updateProductionRow}
-        />
+        <ProductionRow block={block} onUpdate={updateProductionRow} />
       </div>
     );
   });
+
 
   return (
     <div
@@ -72,9 +74,7 @@ export function Satisfactory() {
       >
         <h4>Production Overview</h4>
         <hr />
-        <p>TODO - overview row component</p>
-        <p>TODO - overview row component</p>
-        <p>TODO - overview row component</p>
+        <ProductionOverview productionBlocks={productionBlocks} />
       </div>
 
       <div style={{ gridArea: 'production' }}>
