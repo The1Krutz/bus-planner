@@ -1,20 +1,44 @@
 import { useState } from 'react';
 import { ProductionRow } from './productionRow';
-import type { Recipe } from './items';
+import { ScrewsRecipes } from './items/recipes/screws';
+import type { IProductionBlock } from './types';
+
+function getUID() {
+  // Get the timestamp and convert
+  // it into alphanumeric input
+  return Date.now().toString(36);
+}
 
 export function Satisfactory() {
-  const [addingProductionCell, setAddingProductionCell] = useState(false);
+  const [productionBlocks, setProductionBlocks] = useState<IProductionBlock[]>(
+    [],
+  );
 
   function addNewProductionRow() {
-    setAddingProductionCell(true);
+    const newBlock: IProductionBlock = {
+      recipe: ScrewsRecipes[0],
+      quantity: 1,
+      id: getUID(),
+    };
+
+    setProductionBlocks([...productionBlocks, newBlock]);
   }
 
-  function addNewProduction(recipe: Recipe, quantity: number) {
-    console.log('Satisfactory.addNewProduction', recipe, quantity);
-    // TODO - add this recipe/quantity to the overall factory production
-
-    setAddingProductionCell(false);
+  function updateProductionRow() {
+    console.log('satisfactory.index.updateProductionRow');
   }
+
+  const allProductionBlocks = productionBlocks.map((block) => {
+    return (
+      <div key={block.id}>
+        <ProductionRow
+          initialRecipe={block.recipe}
+          initialQuantity={block.quantity}
+          onUpdate={updateProductionRow}
+        />
+      </div>
+    );
+  });
 
   return (
     <div
@@ -58,14 +82,7 @@ export function Satisfactory() {
           <button onClick={addNewProductionRow}> Add New </button>
         </h4>
         <hr />
-        <p>TODO - production block component</p>
-        <p>TODO - production block component</p>
-        <p>TODO - production block component</p>
-        <p>TODO - production block component</p>
-        <p>TODO - production block component</p>
-        {addingProductionCell && (
-          <ProductionRow onUpdate={addNewProduction} />
-        )}
+        {allProductionBlocks}
       </div>
     </div>
   );

@@ -1,18 +1,24 @@
 import { useState, type ChangeEvent } from 'react';
 import { AllBusItems, AllRecipes, type Item, type Recipe } from './items';
 import { doesRecipeProduce } from './items/helpers';
-import { Screws, ScrewsRecipes } from './items/recipes/screws';
+import { Screws } from './items/recipes/screws';
 
 interface IProductionRowProps {
+  initialRecipe: Recipe;
+  initialQuantity: number;
   onUpdate: (recipe: Recipe, quantity: number) => void;
 }
 
-export function ProductionRow({ onUpdate }: IProductionRowProps) {
-  const [selectedItem, setSelectedItem] = useState<Item>(Screws);
-  const [selectedRecipe, setSelectedRecipe] = useState<Recipe>(
-    ScrewsRecipes[0],
+export function ProductionRow({
+  initialRecipe,
+  initialQuantity,
+  onUpdate,
+}: IProductionRowProps) {
+  const [selectedItem, setSelectedItem] = useState<Item>(
+    initialRecipe.produces[0].item ?? Screws,
   );
-  const [quantity, setQuantity] = useState<number>(1);
+  const [selectedRecipe, setSelectedRecipe] = useState<Recipe>(initialRecipe);
+  const [quantity, setQuantity] = useState<number>(initialQuantity);
 
   function selectItem(event: ChangeEvent<HTMLSelectElement>) {
     const itemName = event.target.value as Item;
@@ -54,16 +60,14 @@ export function ProductionRow({ onUpdate }: IProductionRowProps) {
       <div
         style={{
           display: 'flex',
-          alignItems: 'flex-end',
+          justifyContent: 'space-between',
           gap: '12px',
-          marginBottom: '16px',
         }}
       >
         <div
           style={{
             display: 'flex',
             flexDirection: 'column',
-            width: '200px',
           }}
         >
           <span>Choose product:</span>
@@ -83,10 +87,9 @@ export function ProductionRow({ onUpdate }: IProductionRowProps) {
           style={{
             display: 'flex',
             flexDirection: 'column',
-            width: '200px',
           }}
         >
-          <span>Choose Recipe:</span>
+          <span>Choose Recipe: (TODO - replace with radio buttons?)</span>
           <select value={selectedRecipe.name} onChange={selectRecipe}>
             <option disabled>Select a recipe</option>
             {AllRecipes.filter((recipe) =>
@@ -103,10 +106,10 @@ export function ProductionRow({ onUpdate }: IProductionRowProps) {
           style={{
             display: 'flex',
             flexDirection: 'column',
-            width: '200px',
+            width: '100px',
           }}
         >
-          <span>Number of machines producing this recipe</span>
+          <span>Quantity</span>
           <input type="number" value={quantity} onChange={selectQuantity} />
         </div>
       </div>
