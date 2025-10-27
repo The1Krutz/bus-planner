@@ -5,6 +5,7 @@ export function MainLayout() {
     <div
       style={{
         height: '100vh',
+        width: '100vh',
         display: 'grid',
         gridTemplateColumns: '100%',
         gridTemplateRows: '70px 1fr 70px',
@@ -13,10 +14,14 @@ export function MainLayout() {
         'content'
         'footer'
         `,
+        overflow: 'scroll',
       }}
     >
-      <h2 style={{ gridArea: 'header' }}>Bus planner</h2>
-      <div style={{ gridArea: 'content' }}>
+      <h2 style={{ gridArea: 'header' }}>
+        Bus planner - [figure out how to hoist the name of the child component
+        into here]
+      </h2>
+      <div style={{ gridArea: 'content', overflow: 'scroll' }}>
         <Outlet />
       </div>
       <div style={{ gridArea: 'footer' }}>Footer content</div>

@@ -3,11 +3,11 @@ import { AllBusItems, AllRecipes, type Item, type Recipe } from './items';
 import { doesRecipeProduce } from './items/helpers';
 import { Screws, ScrewsRecipes } from './items/recipes/screws';
 
-interface IAddProductionProps {
-  onFinalize: (recipe: Recipe, quantity: number) => void;
+interface IProductionRowProps {
+  onUpdate: (recipe: Recipe, quantity: number) => void;
 }
 
-export function AddProductionBlock({ onFinalize }: IAddProductionProps) {
+export function ProductionRow({ onUpdate }: IProductionRowProps) {
   const [selectedItem, setSelectedItem] = useState<Item>(Screws);
   const [selectedRecipe, setSelectedRecipe] = useState<Recipe>(
     ScrewsRecipes[0],
@@ -23,11 +23,17 @@ export function AddProductionBlock({ onFinalize }: IAddProductionProps) {
   function selectRecipe(event: ChangeEvent<HTMLSelectElement>) {
     const recipe = AllRecipes.find((z) => z.name === event.target.value);
     setSelectedRecipe(recipe!);
+
+    // pass update to higher
+    onUpdate(selectedRecipe, quantity);
   }
 
   function selectQuantity(event: ChangeEvent<HTMLInputElement>) {
     const quantity = parseInt(event.target.value);
     setQuantity(quantity);
+
+    // pass update to higher
+    onUpdate(selectedRecipe, quantity);
   }
 
   function setDefaultRecipe(item: Item) {
@@ -37,15 +43,14 @@ export function AddProductionBlock({ onFinalize }: IAddProductionProps) {
     setSelectedRecipe(recipe!);
   }
 
-  function finalizeProductionBlock() {
-    onFinalize(selectedRecipe, quantity);
-  }
-
-  // console.log(selectedItem, selectedRecipe);
-
   return (
-    <div>
-      <p>New production block</p>
+    <div
+      style={{
+        border: '1px solid lightgrey',
+        borderRadius: '16px',
+        padding: '16px',
+      }}
+    >
       <div
         style={{
           display: 'flex',
@@ -105,8 +110,6 @@ export function AddProductionBlock({ onFinalize }: IAddProductionProps) {
           <input type="number" value={quantity} onChange={selectQuantity} />
         </div>
       </div>
-
-      <button onClick={finalizeProductionBlock}>Add</button>
     </div>
   );
 }
