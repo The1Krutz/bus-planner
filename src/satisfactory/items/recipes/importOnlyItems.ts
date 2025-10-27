@@ -22,3 +22,4 @@ export const Sulfur = 'Sulfur';
 export const SulfuricAcid = 'Sulfuric Acid';
 export const Water = 'Water';
 export const ExcitedPhotonicMatter = 'Excited Photonic Matter';
+export const NitrogenGas='Nitrogen Gas';

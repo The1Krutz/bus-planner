@@ -97,6 +97,7 @@ import {
   AluminaSolution,
   DarkMatterResidue,
   ExcitedPhotonicMatter,
+  NitrogenGas,
   PetroleumCoke,
   QuartzCrystal,
   Silica,
@@ -130,6 +131,7 @@ export type ImportItems =
   | typeof HeavyOilResidue
   | typeof IronIngot
   | typeof IronOre
+  | typeof NitrogenGas
   | typeof PackagedNitrogenGas
   | typeof PetroleumCoke
   | typeof Plastic
