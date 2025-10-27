@@ -95,6 +95,8 @@ import {
 import { Wire, WireRecipes } from './recipes/wire';
 import {
   AluminaSolution,
+  DarkMatterResidue,
+  ExcitedPhotonicMatter,
   PetroleumCoke,
   QuartzCrystals,
   Silica,
@@ -123,6 +125,8 @@ export type ImportItems =
   | typeof CateriumIngot
   | typeof Concrete
   | typeof CopperIngot
+  | typeof DarkMatterResidue
+  | typeof ExcitedPhotonicMatter
   | typeof HeavyOilResidue
   | typeof IronIngot
   | typeof IronOre
