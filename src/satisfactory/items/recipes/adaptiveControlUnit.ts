@@ -1,5 +1,8 @@
 import type { Recipe } from '..';
-import { Cable } from './cable';
+import { AutomatedWiring } from './automatedWiring';
+import { CircuitBoard } from './circuitBoard';
+import { Computer } from './computer';
+import { HeavyModularFrame } from './heavyModularFrame';
 
 export const AdaptiveControlUnit = 'Adaptive Control Unit';
 
@@ -10,13 +13,25 @@ export const AdaptiveControlUnitRecipes: Recipe[] = [
     produces: [
       {
         item: AdaptiveControlUnit,
-        rate: 0,
+        rate: 1,
       },
     ],
     consumes: [
       {
-        item: Cable,
-        rate: 0,
+        item: AutomatedWiring,
+        rate: 5,
+      },
+      {
+        item: CircuitBoard,
+        rate: 5,
+      },
+      {
+        item: HeavyModularFrame,
+        rate: 1,
+      },
+      {
+        item: Computer,
+        rate: 2,
       },
     ],
   },
