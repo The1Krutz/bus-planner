@@ -137,26 +137,26 @@ export type ImportItems =
   | typeof AluminaSolution
   | typeof AluminumIngot
   | typeof CateriumIngot
+  | typeof Coal
   | typeof Concrete
   | typeof CopperIngot
+  | typeof CrudeOil
   | typeof DarkMatterResidue
   | typeof ExcitedPhotonicMatter
+  | typeof Fuel
   | typeof HeavyOilResidue
   | typeof IronIngot
   | typeof IronOre
+  | typeof Limestone
+  | typeof NitricAcid
   | typeof NitrogenGas
   | typeof PackagedNitrogenGas
+  | typeof PackagedTurbofuel
   | typeof PetroleumCoke
   | typeof Plastic
   | typeof QuartzCrystal
-  | typeof NitricAcid
-  | typeof Fuel
   | typeof ReanimatedSam
   | typeof Rubber
-  | typeof Coal
-  | typeof Limestone
-  | typeof CrudeOil
-  | typeof PackagedTurbofuel
   | typeof Silica
   | typeof SteelIngot
   | typeof Sulfur
@@ -181,6 +181,8 @@ export type BusItems =
   | typeof CopperPowder
   | typeof CopperSheet
   | typeof CrystalOscillator
+  | typeof DarkMatterCrystal
+  | typeof Diamonds
   | typeof ElectromagneticControlRod
   | typeof EncasedIndustrialBeam
   | typeof FicsiteIngot
@@ -191,8 +193,6 @@ export type BusItems =
   | typeof HighSpeedConnector
   | typeof IronPlate
   | typeof IronRod
-  | typeof Diamonds
-  | typeof DarkMatterCrystal
   | typeof ModularEngine
   | typeof ModularFrame
   | typeof Motor
@@ -259,13 +259,13 @@ export const AllRecipes: Recipe[] = [
   ...CopperPowderRecipes,
   ...CopperSheetRecipes,
   ...CrystalOscillatorRecipes,
+  ...DarkMatterCrystalRecipes,
+  ...DiamondsRecipes,
   ...ElectromagneticControlRodRecipes,
   ...EncasedIndustrialBeamRecipes,
   ...FicsiteIngotRecipes,
-  ...DiamondsRecipes,
   ...FicsiteTrigonRecipes,
   ...FusedModularFrameRecipes,
-  ...DarkMatterCrystalRecipes,
   ...HeatSinkRecipes,
   ...HeavyModularFrameRecipes,
   ...HighSpeedConnectorRecipes,
@@ -306,11 +306,11 @@ export const AllBusItems: Item[] = [
   CircuitBoard,
   Computer,
   CoolingSystem,
-  Diamonds,
   CopperPowder,
   CopperSheet,
-  DarkMatterCrystal,
   CrystalOscillator,
+  DarkMatterCrystal,
+  Diamonds,
   ElectromagneticControlRod,
   EncasedIndustrialBeam,
   FicsiteIngot,
