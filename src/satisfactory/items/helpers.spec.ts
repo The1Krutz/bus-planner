@@ -9,18 +9,8 @@ describe('Item Helpers', () => {
   describe('doesRecipeProduce', () => {
     const recipe: Recipe = {
       name: 'Test recipe',
-      produces: [
-        {
-          item: IronPlate,
-          rate: 20,
-        },
-      ],
-      consumes: [
-        {
-          item: IronIngot,
-          rate: 30,
-        },
-      ],
+      produces: [{ item: IronPlate, rate: 20 }],
+      consumes: [{ item: IronIngot, rate: 30 }],
     };
 
     it('works when the recipe does produce an item', () => {

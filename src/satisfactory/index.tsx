@@ -11,7 +11,7 @@ export function Satisfactory() {
 
   function addNewProduction(recipe: Recipe, quantity: number) {
     console.log('Satisfactory.addNewProduction', recipe, quantity);
-    // TODO - add this recipe/quantity to the overall faactory production
+    // TODO - add this recipe/quantity to the overall factory production
 
     setAddingProductionCell(false);
   }

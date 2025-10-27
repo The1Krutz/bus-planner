@@ -4,12 +4,22 @@ export function MainLayout() {
   return (
     <div
       style={{
-        // height: '100vh',
-        width: '100%',
+        height: '100vh',
+        display: 'grid',
+        gridTemplateColumns: '100%',
+        gridTemplateRows: '70px 1fr 70px',
+        gridTemplateAreas: `
+        'header'
+        'content'
+        'footer'
+        `,
       }}
     >
-      <h2>Bus planner</h2>
-      <Outlet />
+      <h2 style={{ gridArea: 'header' }}>Bus planner</h2>
+      <div style={{ gridArea: 'content' }}>
+        <Outlet />
+      </div>
+      <div style={{ gridArea: 'footer' }}>Footer content</div>
     </div>
   );
 }
