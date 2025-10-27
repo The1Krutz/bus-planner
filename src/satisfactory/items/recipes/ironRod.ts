@@ -11,7 +11,7 @@ export const IronRodRecipes: Recipe[] = [
     consumes: [{ item: IronIngot, rate: 15 }],
   },
   {
-    name: 'AAluminum Rod',
+    name: 'Aluminum Rod',
     produces: [{ item: IronRod, rate: 52.5 }],
     consumes: [{ item: AluminumIngot, rate: 7.5 }],
   },
