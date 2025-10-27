@@ -1,5 +1,7 @@
 import type { Recipe } from '..';
-import { Cable } from './cable';
+
+import { CopperPowder } from './copperPowder';
+import { PressureConversionCube } from './pressureConversionCube';
 
 export const NuclearPasta = 'Nuclear Pasta';
 
@@ -7,17 +9,10 @@ export const NuclearPastaRecipes: Recipe[] = [
   {
     name: 'Nuclear Pasta',
     default: true,
-    produces: [
-      {
-        item: NuclearPasta,
-        rate: 0,
-      },
-    ],
+    produces: [{ item: NuclearPasta, rate: 0.5 }],
     consumes: [
-      {
-        item: Cable,
-        rate: 0,
-      },
+      { item: CopperPowder, rate: 100 },
+      { item: PressureConversionCube, rate: 0.5 },
     ],
   },
 ];
