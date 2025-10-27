@@ -93,18 +93,20 @@ import {
   VersatileFrameworkRecipes,
 } from './recipes/versatileFramework';
 import { Wire, WireRecipes } from './recipes/wire';
-import type {
-  AluminumIngot,
-  CateriumIngot,
-  Concrete,
-  CopperIngot,
-  HeavyOilResidue,
-  IronIngot,
-  IronOre,
-  PackagedNitrogenGas,
-  Plastic,
-  Rubber,
-  SteelIngot,
+import {
+  QuartzCrystals,
+  Silica,
+  type AluminumIngot,
+  type CateriumIngot,
+  type Concrete,
+  type CopperIngot,
+  type HeavyOilResidue,
+  type IronIngot,
+  type IronOre,
+  type PackagedNitrogenGas,
+  type Plastic,
+  type Rubber,
+  type SteelIngot,
 } from './recipes/importOnlyItems';
 
 /**
@@ -120,7 +122,9 @@ export type ImportItems =
   | typeof IronOre
   | typeof PackagedNitrogenGas
   | typeof Plastic
+  | typeof QuartzCrystals
   | typeof Rubber
+  | typeof Silica
   | typeof SteelIngot;
 
 /**
