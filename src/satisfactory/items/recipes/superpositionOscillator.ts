@@ -1,11 +1,11 @@
 import type { Recipe } from '..';
 import { Cable } from './cable';
 
-export const SuperpositionOscillator = 'Superpostion Oscillator';
+export const SuperpositionOscillator = 'Superposition Oscillator';
 
 export const SuperpositionOscillatorRecipes: Recipe[] = [
   {
-    name: 'Superpostion Oscillator',
+    name: 'Superposition Oscillator',
     default: true,
     produces: [
       {
