@@ -7,21 +7,10 @@ export const AlcladAluminumSheetRecipes: Recipe[] = [
   {
     name: 'Alclad Aluminum Sheet',
     default: true,
-    produces: [
-      {
-        item: AlcladAluminumSheet,
-        rate: 30,
-      },
-    ],
+    produces: [{ item: AlcladAluminumSheet, rate: 30 }],
     consumes: [
-      {
-        item: AluminumIngot,
-        rate: 30,
-      },
-      {
-        item: CopperIngot,
-        rate: 10,
-      },
+      { item: AluminumIngot, rate: 30 },
+      { item: CopperIngot, rate: 10 },
     ],
   },
 ];

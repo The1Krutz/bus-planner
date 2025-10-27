@@ -10,48 +10,20 @@ export const HighSpeedConnectorRecipes: Recipe[] = [
   {
     name: 'High Speed Connector',
     default: true,
-    produces: [
-      {
-        item: HighSpeedConnector,
-        rate: 3.75,
-      },
-    ],
+    produces: [{ item: HighSpeedConnector, rate: 3.75 }],
     consumes: [
-      {
-        item: Quickwire,
-        rate: 210,
-      },
-      {
-        item: Cable,
-        rate: 37.5,
-      },
-      {
-        item: CircuitBoard,
-        rate: 3.75,
-      },
+      { item: Quickwire, rate: 210 },
+      { item: Cable, rate: 37.5 },
+      { item: CircuitBoard, rate: 3.75 },
     ],
   },
   {
     name: 'Silicon High Speed Connector',
-    produces: [
-      {
-        item: HighSpeedConnector,
-        rate: 3,
-      },
-    ],
+    produces: [{ item: HighSpeedConnector, rate: 3 }],
     consumes: [
-      {
-        item: Quickwire,
-        rate: 90,
-      },
-      {
-        item: Silica,
-        rate: 37.5,
-      },
-      {
-        item: CircuitBoard,
-        rate: 3,
-      },
+      { item: Quickwire, rate: 90 },
+      { item: Silica, rate: 37.5 },
+      { item: CircuitBoard, rate: 3 },
     ],
   },
 ];

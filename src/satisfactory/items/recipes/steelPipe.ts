@@ -7,51 +7,20 @@ export const SteelPipeRecipes: Recipe[] = [
   {
     name: 'Steel Pipe',
     default: true,
-    produces: [
-      {
-        item: SteelPipe,
-        rate: 20,
-      },
-    ],
-    consumes: [
-      {
-        item: SteelIngot,
-        rate: 30,
-      },
-    ],
+    produces: [{ item: SteelPipe, rate: 20 }],
+    consumes: [{ item: SteelIngot, rate: 30 }],
   },
   {
     name: 'Iron Pipe',
-    produces: [
-      {
-        item: SteelPipe,
-        rate: 25,
-      },
-    ],
-    consumes: [
-      {
-        item: IronIngot,
-        rate: 100,
-      },
-    ],
+    produces: [{ item: SteelPipe, rate: 25 }],
+    consumes: [{ item: IronIngot, rate: 100 }],
   },
   {
     name: 'Molded Steel Pipe',
-    produces: [
-      {
-        item: SteelPipe,
-        rate: 50,
-      },
-    ],
+    produces: [{ item: SteelPipe, rate: 50 }],
     consumes: [
-      {
-        item: SteelIngot,
-        rate: 50,
-      },
-      {
-        item: Concrete,
-        rate: 30,
-      },
+      { item: SteelIngot, rate: 50 },
+      { item: Concrete, rate: 30 },
     ],
   },
 ];

@@ -9,40 +9,18 @@ export const ElectromagneticControlRodRecipes: Recipe[] = [
   {
     name: 'Electromagnetic Control Rod',
     default: true,
-    produces: [
-      {
-        item: ElectromagneticControlRod,
-        rate: 4,
-      },
-    ],
+    produces: [{ item: ElectromagneticControlRod, rate: 4 }],
     consumes: [
-      {
-        item: Stator,
-        rate: 6,
-      },
-      {
-        item: AiLimiter,
-        rate: 4,
-      },
+      { item: Stator, rate: 6 },
+      { item: AiLimiter, rate: 4 },
     ],
   },
   {
     name: 'Electromagnetic Connection Rod',
-    produces: [
-      {
-        item: ElectromagneticControlRod,
-        rate: 8,
-      },
-    ],
+    produces: [{ item: ElectromagneticControlRod, rate: 8 }],
     consumes: [
-      {
-        item: Stator,
-        rate: 8,
-      },
-      {
-        item: HighSpeedConnector,
-        rate: 4,
-      },
+      { item: Stator, rate: 8 },
+      { item: HighSpeedConnector, rate: 4 },
     ],
   },
 ];

@@ -98,7 +98,7 @@ import {
   DarkMatterResidue,
   ExcitedPhotonicMatter,
   PetroleumCoke,
-  QuartzCrystals,
+  QuartzCrystal,
   Silica,
   Sulfur,
   SulfuricAcid,
@@ -133,7 +133,7 @@ export type ImportItems =
   | typeof PackagedNitrogenGas
   | typeof PetroleumCoke
   | typeof Plastic
-  | typeof QuartzCrystals
+  | typeof QuartzCrystal
   | typeof Rubber
   | typeof Silica
   | typeof SteelIngot

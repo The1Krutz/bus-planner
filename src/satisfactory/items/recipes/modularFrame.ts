@@ -10,59 +10,26 @@ export const ModularFrameRecipes: Recipe[] = [
   {
     name: 'Modular Frame',
     default: true,
-    produces: [
-      {
-        item: ModularFrame,
-        rate: 2,
-      },
-    ],
+    produces: [{ item: ModularFrame, rate: 2 }],
     consumes: [
-      {
-        item: ReinforcedIronPlate,
-        rate: 3,
-      },
-      {
-        item: IronRod,
-        rate: 12,
-      },
+      { item: ReinforcedIronPlate, rate: 3 },
+      { item: IronRod, rate: 12 },
     ],
   },
   {
     name: 'Bolted Frame',
-    produces: [
-      {
-        item: ModularFrame,
-        rate: 5,
-      },
-    ],
+    produces: [{ item: ModularFrame, rate: 5 }],
     consumes: [
-      {
-        item: ReinforcedIronPlate,
-        rate: 7.5,
-      },
-      {
-        item: Screws,
-        rate: 140,
-      },
+      { item: ReinforcedIronPlate, rate: 7.5 },
+      { item: Screws, rate: 140 },
     ],
   },
   {
     name: 'Steeled Frame',
-    produces: [
-      {
-        item: ModularFrame,
-        rate: 3,
-      },
-    ],
+    produces: [{ item: ModularFrame, rate: 3 }],
     consumes: [
-      {
-        item: ReinforcedIronPlate,
-        rate: 2,
-      },
-      {
-        item: SteelPipe,
-        rate: 10,
-      },
+      { item: ReinforcedIronPlate, rate: 2 },
+      { item: SteelPipe, rate: 10 },
     ],
   },
 ];

@@ -9,40 +9,18 @@ export const StatorRecipes: Recipe[] = [
   {
     name: 'Stator',
     default: true,
-    produces: [
-      {
-        item: Stator,
-        rate: 5,
-      },
-    ],
+    produces: [{ item: Stator, rate: 5 }],
     consumes: [
-      {
-        item: SteelPipe,
-        rate: 15,
-      },
-      {
-        item: Wire,
-        rate: 40,
-      },
+      { item: SteelPipe, rate: 15 },
+      { item: Wire, rate: 40 },
     ],
   },
   {
     name: 'Quickwire Stator',
-    produces: [
-      {
-        item: Stator,
-        rate: 8,
-      },
-    ],
+    produces: [{ item: Stator, rate: 8 }],
     consumes: [
-      {
-        item: SteelPipe,
-        rate: 16,
-      },
-      {
-        item: Quickwire,
-        rate: 60,
-      },
+      { item: SteelPipe, rate: 16 },
+      { item: Quickwire, rate: 60 },
     ],
   },
 ];

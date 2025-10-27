@@ -9,40 +9,18 @@ export const AiLimiterRecipes: Recipe[] = [
   {
     name: 'AI Limiter',
     default: true,
-    produces: [
-      {
-        item: AiLimiter,
-        rate: 5,
-      },
-    ],
+    produces: [{ item: AiLimiter, rate: 5 }],
     consumes: [
-      {
-        item: CopperSheet,
-        rate: 25,
-      },
-      {
-        item: Quickwire,
-        rate: 100,
-      },
+      { item: CopperSheet, rate: 25 },
+      { item: Quickwire, rate: 100 },
     ],
   },
   {
     name: 'Plastic AI Limiter',
-    produces: [
-      {
-        item: AiLimiter,
-        rate: 8,
-      },
-    ],
+    produces: [{ item: AiLimiter, rate: 8 }],
     consumes: [
-      {
-        item: Quickwire,
-        rate: 120,
-      },
-      {
-        item: Plastic,
-        rate: 28,
-      },
+      { item: Quickwire, rate: 120 },
+      { item: Plastic, rate: 28 },
     ],
   },
 ];

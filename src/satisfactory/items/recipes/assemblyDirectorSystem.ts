@@ -8,21 +8,10 @@ export const AssemblyDirectorSystemRecipes: Recipe[] = [
   {
     name: 'Assembly Director System',
     default: true,
-    produces: [
-      {
-        item: AssemblyDirectorSystem,
-        rate: 0.75,
-      },
-    ],
+    produces: [{ item: AssemblyDirectorSystem, rate: 0.75 }],
     consumes: [
-      {
-        item: AdaptiveControlUnit,
-        rate: 1.5,
-      },
-      {
-        item: Supercomputer,
-        rate: 0.75,
-      },
+      { item: AdaptiveControlUnit, rate: 1.5 },
+      { item: Supercomputer, rate: 0.75 },
     ],
   },
 ];
