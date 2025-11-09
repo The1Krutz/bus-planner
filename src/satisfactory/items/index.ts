@@ -375,4 +375,4 @@ export const AllBusItems: Item[] = [
   Wire,
 ];
 
-export const AllItems: Item[] = [...AllImportItems, ...AllBusItems];
+export const AllItems: Item[] = [...AllImportItems, ...AllBusItems].sort();
