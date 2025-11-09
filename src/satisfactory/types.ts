@@ -4,4 +4,5 @@ export interface IProductionBlock {
   recipe: Recipe;
   quantity: number;
   id: string;
+  sloops: number;
 }

@@ -14,7 +14,7 @@ export function ProductionOverviewRow({
   return (
     <>
       <span>{item}</span>
-      <span>+{produced}</span>
+      <span>{produced}</span>
       <span>-{consumed}</span>
       <span>{produced - consumed}</span>
     </>

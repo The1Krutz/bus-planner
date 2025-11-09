@@ -20,6 +20,7 @@ export function Satisfactory() {
       recipe: ScrewsRecipes[0],
       quantity: 1,
       id: getUID(),
+      sloops: 0,
     };
 
     setProductionBlocks([...productionBlocks, newBlock]);

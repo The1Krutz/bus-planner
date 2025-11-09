@@ -23,6 +23,7 @@ export function ProductionRow({
   const [selectedQuantity, setSelectedQuantity] = useState<number>(
     block.quantity,
   );
+  const [selectedSloops, setSelectedSloops] = useState<number>(block.sloops);
 
   function selectItem(event: ChangeEvent<HTMLSelectElement>) {
     const itemName = event.target.value as Item;
@@ -43,6 +44,13 @@ export function ProductionRow({
     reportUpdate({ quantity });
   }
 
+  function selectSloops(event: ChangeEvent<HTMLInputElement>) {
+    const sloops = parseInt(event.target.value);
+    setSelectedSloops(sloops);
+
+    reportUpdate({ sloops });
+  }
+
   function removeProductionBlock() {
     onDelete(block.id);
   }
@@ -52,6 +60,7 @@ export function ProductionRow({
       id: block.id,
       recipe: selectedRecipe,
       quantity: selectedQuantity,
+      sloops: selectedSloops,
       ...update,
     };
 
@@ -113,8 +122,26 @@ export function ProductionRow({
         <span>Quantity</span>
         <input
           type="number"
+          min="0"
           value={selectedQuantity}
           onChange={selectQuantity}
+        />
+      </div>
+
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          width: '100px',
+        }}
+      >
+        <span>Sloops</span>
+        <input
+          type="number"
+          min="0"
+          max={selectedQuantity}
+          value={selectedSloops}
+          onChange={selectSloops}
         />
       </div>
 
