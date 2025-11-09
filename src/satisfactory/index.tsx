@@ -33,10 +33,20 @@ export function Satisfactory() {
     setProductionBlocks(blocksCopy);
   }
 
+  function deleteProductionRow(id: string) {
+    const blocksCopy = productionBlocks.filter((block) => block.id !== id);
+
+    setProductionBlocks(blocksCopy);
+  }
+
   const allProductionBlocks = productionBlocks.map((block) => {
     return (
       <div key={block.id}>
-        <ProductionRow block={block} onUpdate={updateProductionRow} />
+        <ProductionRow
+          block={block}
+          onUpdate={updateProductionRow}
+          onDelete={deleteProductionRow}
+        />
       </div>
     );
   });

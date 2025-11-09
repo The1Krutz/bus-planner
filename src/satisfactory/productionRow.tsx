@@ -8,9 +8,14 @@ import { getDefaultRecipe } from './items/helpers';
 interface IProductionRowProps {
   block: IProductionBlock;
   onUpdate: (update: IProductionBlock) => void;
+  onDelete: (id: string) => void;
 }
 
-export function ProductionRow({ block, onUpdate }: IProductionRowProps) {
+export function ProductionRow({
+  block,
+  onUpdate,
+  onDelete,
+}: IProductionRowProps) {
   const [selectedItem, setSelectedItem] = useState<Item>(
     block.recipe.produces[0].item ?? Screws,
   );
@@ -39,7 +44,7 @@ export function ProductionRow({ block, onUpdate }: IProductionRowProps) {
   }
 
   function removeProductionBlock() {
-    // TODO
+    onDelete(block.id);
   }
 
   function reportUpdate(update: Partial<IProductionBlock>) {
