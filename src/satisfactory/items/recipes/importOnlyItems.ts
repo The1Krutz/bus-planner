@@ -1,5 +1,3 @@
-import type { Item, Recipe } from '..';
-
 /**
  * This is where all the items go that are not produced by any recipe we care about.
  * Ores, etc
@@ -32,16 +30,3 @@ export const SteelIngot = 'Steel Ingot';
 export const Sulfur = 'Sulfur';
 export const SulfuricAcid = 'Sulfuric Acid';
 export const Water = 'Water';
-
-export function GetImportRecipe(item: Item): Recipe {
-  return {
-    consumes: [],
-    name: `Import - ${item}`,
-    produces: [
-      {
-        item,
-        rate: 1,
-      },
-    ],
-  };
-}

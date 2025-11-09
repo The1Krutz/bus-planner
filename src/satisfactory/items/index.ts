@@ -95,33 +95,33 @@ import {
 import { Wire, WireRecipes } from './recipes/wire';
 import {
   AluminaSolution,
+  AluminumIngot,
+  CateriumIngot,
   Coal,
+  Concrete,
+  CopperIngot,
   CrudeOil,
   DarkMatterResidue,
   ExcitedPhotonicMatter,
   Fuel,
+  HeavyOilResidue,
+  IronIngot,
+  IronOre,
   Limestone,
   NitricAcid,
   NitrogenGas,
+  PackagedNitrogenGas,
   PackagedTurbofuel,
   PetroleumCoke,
+  Plastic,
   QuartzCrystal,
   ReanimatedSam,
+  Rubber,
   Silica,
+  SteelIngot,
   Sulfur,
   SulfuricAcid,
   Water,
-  type AluminumIngot,
-  type CateriumIngot,
-  type Concrete,
-  type CopperIngot,
-  type HeavyOilResidue,
-  type IronIngot,
-  type IronOre,
-  type PackagedNitrogenGas,
-  type Plastic,
-  type Rubber,
-  type SteelIngot,
 } from './recipes/importOnlyItems';
 import { FicsiteIngot, FicsiteIngotRecipes } from './recipes/ficsiteIngot';
 import {
@@ -294,6 +294,37 @@ export const AllRecipes: Recipe[] = [
   ...WireRecipes,
 ];
 
+export const AllImportItems: Item[] = [
+  AluminaSolution,
+  AluminumIngot,
+  CateriumIngot,
+  Coal,
+  Concrete,
+  CopperIngot,
+  CrudeOil,
+  DarkMatterResidue,
+  ExcitedPhotonicMatter,
+  Fuel,
+  HeavyOilResidue,
+  IronIngot,
+  IronOre,
+  Limestone,
+  NitricAcid,
+  NitrogenGas,
+  PackagedNitrogenGas,
+  PackagedTurbofuel,
+  PetroleumCoke,
+  Plastic,
+  QuartzCrystal,
+  ReanimatedSam,
+  Rubber,
+  Silica,
+  SteelIngot,
+  Sulfur,
+  SulfuricAcid,
+  Water,
+];
+
 export const AllBusItems: Item[] = [
   AdaptiveControlUnit,
   AiLimiter,
@@ -343,3 +374,5 @@ export const AllBusItems: Item[] = [
   VersatileFramework,
   Wire,
 ];
+
+export const AllItems: Item[] = [...AllImportItems, ...AllBusItems];

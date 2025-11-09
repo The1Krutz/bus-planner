@@ -1,5 +1,5 @@
 import { useState, type ChangeEvent } from 'react';
-import { AllBusItems, type Item, type Recipe } from './items';
+import { AllItems, type Item, type Recipe } from './items';
 import { Screws } from './items/recipes/screws';
 import { RecipePicker } from './recipePicker';
 import type { IProductionBlock } from './types';
@@ -91,7 +91,7 @@ export function ProductionRow({
           <option disabled key="default">
             Select a product
           </option>
-          {AllBusItems.map((item) => (
+          {AllItems.map((item) => (
             <option key={item} value={item}>
               {item}
             </option>

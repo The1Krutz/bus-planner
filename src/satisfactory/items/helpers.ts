@@ -8,6 +8,27 @@ export function getRecipesForItem(item: Item): Recipe[] {
   return AllRecipes.filter((recipe) => doesRecipeProduce(recipe, item));
 }
 
+export function GetImportRecipe(item: Item): Recipe {
+  return {
+    consumes: [],
+    name: `Import - ${item}`,
+    produces: [
+      {
+        item,
+        rate: 1,
+      },
+    ],
+  };
+}
+
 export function getDefaultRecipe(item: Item): Recipe {
-  return getRecipesForItem(item).find((recipe) => recipe.default)!;
+  const defaultRecipe = getRecipesForItem(item).find(
+    (recipe) => recipe.default,
+  )!;
+
+  if (defaultRecipe !== undefined) {
+    return defaultRecipe;
+  } else {
+    return GetImportRecipe(item);
+  }
 }

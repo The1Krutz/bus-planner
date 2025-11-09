@@ -1,6 +1,5 @@
 import { type Item, type Recipe } from './items';
-import { getRecipesForItem } from './items/helpers';
-import { GetImportRecipe } from './items/recipes/importOnlyItems';
+import { GetImportRecipe, getRecipesForItem } from './items/helpers';
 
 interface IRecipePickerProps {
   blockId: string;
