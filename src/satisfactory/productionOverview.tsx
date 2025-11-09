@@ -120,7 +120,21 @@ export function ProductionOverview({
   }
 
   return (
-    <div>
+    <div
+      style={{
+        display: 'grid',
+        gridTemplateColumns: '2fr 1fr 1fr 1fr',
+        gridTemplateRows: 'repeat(1fr)',
+        columnGap: '32px',
+      }}
+    >
+      {/* table headers */}
+      <span>Item</span>
+      <span>Production</span>
+      <span>Consumption</span>
+      <span>Net</span>
+
+      {/* table data */}
       {overviewRows.map((z) => (
         <ProductionOverviewRow
           item={z.item}

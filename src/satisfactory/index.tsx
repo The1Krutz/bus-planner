@@ -75,7 +75,14 @@ export function Satisfactory() {
         <ProductionOverview productionBlocks={productionBlocks} />
       </div>
 
-      <div style={{ gridArea: 'production' }}>
+      <div
+        style={{
+          gridArea: 'production',
+          maxHeight: '1300px',
+          overflowY: 'scroll',
+          padding: '12px',
+        }}
+      >
         <h4>
           Production Blocks
           <button onClick={addNewProductionRow}> Add New </button>

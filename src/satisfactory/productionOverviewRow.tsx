@@ -12,10 +12,11 @@ export function ProductionOverviewRow({
   consumed,
 }: IProductionOverviewRowProps) {
   return (
-    <div>
-      <p>
-        {item}: +{produced}, -{consumed}, net {produced - consumed}
-      </p>
-    </div>
+    <>
+      <span>{item}</span>
+      <span>+{produced}</span>
+      <span>-{consumed}</span>
+      <span>{produced - consumed}</span>
+    </>
   );
 }
