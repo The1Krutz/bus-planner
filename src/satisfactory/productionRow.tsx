@@ -15,42 +15,43 @@ export function ProductionRow({ block, onUpdate }: IProductionRowProps) {
     block.recipe.produces[0].item ?? Screws,
   );
   const [selectedRecipe, setSelectedRecipe] = useState<Recipe>(block.recipe);
-  const [quantity, setQuantity] = useState<number>(block.quantity);
+  const [selectedQuantity, setSelectedQuantity] = useState<number>(
+    block.quantity,
+  );
 
   function selectItem(event: ChangeEvent<HTMLSelectElement>) {
     const itemName = event.target.value as Item;
     setSelectedItem(itemName);
-    setSelectedRecipe(getDefaultRecipe(itemName));
-
-    reportUpdate();
+    selectRecipe(getDefaultRecipe(itemName));
   }
 
   function selectRecipe(recipe: Recipe) {
     setSelectedRecipe(recipe);
 
-    reportUpdate();
+    reportUpdate({ recipe });
   }
 
   function selectQuantity(event: ChangeEvent<HTMLInputElement>) {
     const quantity = parseInt(event.target.value);
-    setQuantity(quantity);
+    setSelectedQuantity(quantity);
 
-    reportUpdate();
+    reportUpdate({ quantity });
   }
 
   function removeProductionBlock() {
     // TODO
   }
 
-  function reportUpdate() {
-    onUpdate({
-      recipe: selectedRecipe,
-      quantity,
+  function reportUpdate(update: Partial<IProductionBlock>) {
+    const sending: IProductionBlock = {
       id: block.id,
-    });
-  }
+      recipe: selectedRecipe,
+      quantity: selectedQuantity,
+      ...update,
+    };
 
-  console.log('productionRow', selectedItem, selectedRecipe.name, quantity);
+    onUpdate(sending);
+  }
 
   return (
     <div
@@ -105,7 +106,11 @@ export function ProductionRow({ block, onUpdate }: IProductionRowProps) {
         }}
       >
         <span>Quantity</span>
-        <input type="number" value={quantity} onChange={selectQuantity} />
+        <input
+          type="number"
+          value={selectedQuantity}
+          onChange={selectQuantity}
+        />
       </div>
 
       <div>

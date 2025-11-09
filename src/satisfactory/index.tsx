@@ -41,8 +41,6 @@ export function Satisfactory() {
     );
   });
 
-  console.log('index', productionBlocks);
-
   return (
     <div
       style={{
