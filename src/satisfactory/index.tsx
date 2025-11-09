@@ -56,8 +56,7 @@ export function Satisfactory() {
     <div
       style={{
         display: 'grid',
-        gridTemplateColumns: 'min-content 1fr',
-        gridTemplateRows: 'min-content 1fr',
+        gridTemplateColumns: '1fr 3fr',
         gridTemplateAreas: `
       'overview production'
       `,
@@ -79,7 +78,7 @@ export function Satisfactory() {
       <div
         style={{
           gridArea: 'production',
-          maxHeight: '1300px',
+          maxHeight: '1400px',
           overflowY: 'scroll',
           padding: '12px',
         }}

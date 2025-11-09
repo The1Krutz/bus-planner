@@ -73,18 +73,12 @@ export function ProductionRow({
         border: '1px solid lightgrey',
         borderRadius: '16px',
         padding: '16px',
-        display: 'flex',
-        justifyContent: 'space-between',
+        display: 'grid',
+        gridTemplateColumns: '200px 100px 100px 1fr 100px',
         gap: '12px',
       }}
     >
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '4px',
-        }}
-      >
+      <div style={flexStyles}>
         {/* Choosing a product here is just a filter for the recipes in the next step. The recipe also contains this as a `produces` */}
         <span>Choose product:</span>
         <select value={selectedItem} onChange={selectItem}>
@@ -97,7 +91,9 @@ export function ProductionRow({
             </option>
           ))}
         </select>
+      </div>
 
+      <div style={flexStyles}>
         <span>Quantity</span>
         <input
           type="number"
@@ -105,7 +101,9 @@ export function ProductionRow({
           value={selectedQuantity}
           onChange={selectQuantity}
         />
+      </div>
 
+      <div style={flexStyles}>
         <span>Sloops</span>
         <input
           type="number"
@@ -116,12 +114,7 @@ export function ProductionRow({
         />
       </div>
 
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-        }}
-      >
+      <div>
         <RecipePicker
           blockId={block.id}
           item={selectedItem}
@@ -129,9 +122,16 @@ export function ProductionRow({
           onUpdate={selectRecipe}
         />
       </div>
+
       <div>
         <button onClick={removeProductionBlock}>delete</button>
       </div>
     </div>
   );
 }
+
+const flexStyles: React.CSSProperties = {
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '4px',
+};

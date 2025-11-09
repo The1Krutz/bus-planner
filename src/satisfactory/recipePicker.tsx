@@ -32,7 +32,7 @@ export function RecipePicker({
         flexDirection: 'row',
       }}
     >
-      {[...filteredRecipes, GetImportRecipe(item)].map((recipe) => (
+      {[GetImportRecipe(item), ...filteredRecipes].map((recipe) => (
         <div key={recipe.name}>
           <div>
             <input
