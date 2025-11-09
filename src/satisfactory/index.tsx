@@ -59,22 +59,12 @@ export function Satisfactory() {
         gridTemplateColumns: 'min-content 1fr',
         gridTemplateRows: 'min-content 1fr',
         gridTemplateAreas: `
-      'alert alert'
       'overview production'
       `,
         padding: '24px',
         gap: '16px',
       }}
     >
-      <div
-        style={{
-          gridArea: 'alert',
-          textAlign: 'center',
-        }}
-      >
-        <p>TODO - alert for underproducing items</p>
-      </div>
-
       <div
         style={{
           gridArea: 'overview',

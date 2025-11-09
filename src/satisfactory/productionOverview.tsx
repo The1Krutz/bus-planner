@@ -135,13 +135,15 @@ export function ProductionOverview({
       <span>Net</span>
 
       {/* table data */}
-      {overviewRows.map((z) => (
-        <ProductionOverviewRow
-          item={z.item}
-          produced={z.produced}
-          consumed={z.consumed}
-        />
-      ))}
+      {overviewRows
+        .sort((a, b) => a.item.localeCompare(b.item))
+        .map((z) => (
+          <ProductionOverviewRow
+            item={z.item}
+            produced={z.produced}
+            consumed={z.consumed}
+          />
+        ))}
     </div>
   );
 }

@@ -11,12 +11,17 @@ export function ProductionOverviewRow({
   produced,
   consumed,
 }: IProductionOverviewRowProps) {
+  const net = produced - consumed;
+  const deficientStyles: React.CSSProperties = {
+    color: net < 0 ? 'red' : '',
+  };
+
   return (
     <>
-      <span>{item}</span>
-      <span>{produced}</span>
-      <span>-{consumed}</span>
-      <span>{produced - consumed}</span>
+      <span style={deficientStyles}>{item}</span>
+      <span style={deficientStyles}>{produced}</span>
+      <span style={deficientStyles}>-{consumed}</span>
+      <span style={deficientStyles}>{net}</span>
     </>
   );
 }
