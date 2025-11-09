@@ -1,5 +1,6 @@
 import { type Item, type Recipe } from './items';
 import { getRecipesForItem } from './items/helpers';
+import { GetImportRecipe } from './items/recipes/importOnlyItems';
 
 interface IRecipePickerProps {
   blockId: string;
@@ -32,7 +33,7 @@ export function RecipePicker({
         flexDirection: 'row',
       }}
     >
-      {filteredRecipes.map((recipe) => (
+      {[...filteredRecipes, GetImportRecipe(item)].map((recipe) => (
         <div key={recipe.name}>
           <div>
             <input

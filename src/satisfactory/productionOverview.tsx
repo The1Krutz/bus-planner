@@ -97,12 +97,12 @@ export function ProductionOverview({
 
   productionBlocks.forEach((block) => {
     block.recipe.produces.forEach((itemQuantity) => {
-      productionByItem[itemQuantity.item].produced =
+      productionByItem[itemQuantity.item].produced +=
         itemQuantity.rate * block.quantity;
     });
 
     block.recipe.consumes.forEach((itemQuantity) => {
-      productionByItem[itemQuantity.item].consumed =
+      productionByItem[itemQuantity.item].consumed +=
         itemQuantity.rate * block.quantity;
     });
   });
