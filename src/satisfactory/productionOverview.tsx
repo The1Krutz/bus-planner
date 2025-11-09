@@ -95,6 +95,8 @@ export function ProductionOverview({
     Wire: { produced: 0, consumed: 0 },
   };
 
+  
+
   productionBlocks.forEach((block) => {
     block.recipe.produces.forEach((itemQuantity) => {
       productionByItem[itemQuantity.item].produced =
@@ -119,7 +121,7 @@ export function ProductionOverview({
       });
   }
 
-  console.log(productionByItem);
+  console.log('productionOverview', productionBlocks, productionByItem);
 
   return (
     <div>

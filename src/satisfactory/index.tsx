@@ -26,10 +26,9 @@ export function Satisfactory() {
   }
 
   function updateProductionRow(update: IProductionBlock) {
-    const blocksCopy = [...productionBlocks];
-    const updateIndex = blocksCopy.findIndex((z) => z.id === update.id);
-
-    blocksCopy[updateIndex] = update;
+    const blocksCopy = productionBlocks.map((block) =>
+      block.id === update.id ? update : block,
+    );
 
     setProductionBlocks(blocksCopy);
   }
@@ -42,6 +41,7 @@ export function Satisfactory() {
     );
   });
 
+  console.log('index', productionBlocks);
 
   return (
     <div

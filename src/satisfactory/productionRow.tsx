@@ -3,6 +3,7 @@ import { AllBusItems, type Item, type Recipe } from './items';
 import { Screws } from './items/recipes/screws';
 import { RecipePicker } from './recipePicker';
 import type { IProductionBlock } from './types';
+import { getDefaultRecipe } from './items/helpers';
 
 interface IProductionRowProps {
   block: IProductionBlock;
@@ -19,17 +20,21 @@ export function ProductionRow({ block, onUpdate }: IProductionRowProps) {
   function selectItem(event: ChangeEvent<HTMLSelectElement>) {
     const itemName = event.target.value as Item;
     setSelectedItem(itemName);
+    setSelectedRecipe(getDefaultRecipe(itemName));
+
     reportUpdate();
   }
 
   function selectRecipe(recipe: Recipe) {
     setSelectedRecipe(recipe);
+
     reportUpdate();
   }
 
   function selectQuantity(event: ChangeEvent<HTMLInputElement>) {
     const quantity = parseInt(event.target.value);
     setQuantity(quantity);
+
     reportUpdate();
   }
 
@@ -44,6 +49,8 @@ export function ProductionRow({ block, onUpdate }: IProductionRowProps) {
       id: block.id,
     });
   }
+
+  console.log('productionRow', selectedItem, selectedRecipe.name, quantity);
 
   return (
     <div
@@ -85,6 +92,7 @@ export function ProductionRow({ block, onUpdate }: IProductionRowProps) {
         <RecipePicker
           blockId={block.id}
           item={selectedItem}
+          recipe={selectedRecipe}
           onUpdate={selectRecipe}
         />
       </div>

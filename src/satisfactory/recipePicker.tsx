@@ -1,34 +1,29 @@
-import { useEffect, useState } from 'react';
 import { type Item, type Recipe } from './items';
-import { getDefaultRecipe, getRecipesForItem } from './items/helpers';
+import { getRecipesForItem } from './items/helpers';
 
 interface IRecipePickerProps {
   blockId: string;
   item: Item;
   onUpdate: (recipe: Recipe) => void;
+  recipe: Recipe;
 }
 
-export function RecipePicker({ blockId, item, onUpdate }: IRecipePickerProps) {
+export function RecipePicker({
+  blockId,
+  item,
+  onUpdate,
+  recipe,
+}: IRecipePickerProps) {
   const filteredRecipes = getRecipesForItem(item);
 
-  const [selectedRecipe, setSelectedRecipe] = useState<Recipe>(
-    getDefaultRecipe(item),
-  );
-
   function selectRecipe(recipe: Recipe) {
-    setSelectedRecipe(recipe);
-
     // pass update to higher
-    onUpdate(selectedRecipe);
+    onUpdate(recipe);
   }
 
-  function isRecipeSelected(recipe: Recipe): boolean {
-    return recipe.name === selectedRecipe.name;
+  function isRecipeSelected(testRecipe: Recipe): boolean {
+    return testRecipe.name === recipe.name;
   }
-
-  useEffect(() => {
-    setSelectedRecipe(getDefaultRecipe(item));
-  }, [item]);
 
   return (
     <div
