@@ -38,7 +38,7 @@ export function ProductionRow({
   }
 
   function selectQuantity(event: ChangeEvent<HTMLInputElement>) {
-    const quantity = parseInt(event.target.value);
+    const quantity = parseFloat(event.target.value);
     setSelectedQuantity(quantity);
 
     reportUpdate({ quantity });
