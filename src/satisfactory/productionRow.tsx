@@ -82,6 +82,7 @@ export function ProductionRow({
         style={{
           display: 'flex',
           flexDirection: 'column',
+          gap: '4px',
         }}
       >
         {/* Choosing a product here is just a filter for the recipes in the next step. The recipe also contains this as a `produces` */}
@@ -96,6 +97,23 @@ export function ProductionRow({
             </option>
           ))}
         </select>
+
+        <span>Quantity</span>
+        <input
+          type="number"
+          min="0"
+          value={selectedQuantity}
+          onChange={selectQuantity}
+        />
+
+        <span>Sloops</span>
+        <input
+          type="number"
+          min="0"
+          max={selectedQuantity}
+          value={selectedSloops}
+          onChange={selectSloops}
+        />
       </div>
 
       <div
@@ -111,40 +129,6 @@ export function ProductionRow({
           onUpdate={selectRecipe}
         />
       </div>
-
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          width: '100px',
-        }}
-      >
-        <span>Quantity</span>
-        <input
-          type="number"
-          min="0"
-          value={selectedQuantity}
-          onChange={selectQuantity}
-        />
-      </div>
-
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          width: '100px',
-        }}
-      >
-        <span>Sloops</span>
-        <input
-          type="number"
-          min="0"
-          max={selectedQuantity}
-          value={selectedSloops}
-          onChange={selectSloops}
-        />
-      </div>
-
       <div>
         <button onClick={removeProductionBlock}>delete</button>
       </div>
