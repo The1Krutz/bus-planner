@@ -1,8 +1,8 @@
-import { useState } from 'react';
 import { ProductionRow } from './productionRow';
 import { ScrewsRecipes } from './items/recipes/screws';
 import type { IProductionBlock } from './types';
 import { ProductionOverview } from './productionOverview';
+import usePersistentState from '../usePersistentState';
 
 function getUID() {
   // Get the timestamp and convert
@@ -11,9 +11,9 @@ function getUID() {
 }
 
 export function Satisfactory() {
-  const [productionBlocks, setProductionBlocks] = useState<IProductionBlock[]>(
-    [],
-  );
+  const [productionBlocks, setProductionBlocks] = usePersistentState<
+    IProductionBlock[]
+  >('factory', []);
 
   function addNewProductionRow() {
     const newBlock: IProductionBlock = {
