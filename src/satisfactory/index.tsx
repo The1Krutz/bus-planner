@@ -78,7 +78,7 @@ export function Satisfactory() {
       <div
         style={{
           gridArea: 'production',
-          maxHeight: '1400px',
+          maxHeight: '1300px',
           overflowY: 'scroll',
           padding: '12px',
         }}
