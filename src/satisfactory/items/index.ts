@@ -129,6 +129,30 @@ import {
   DarkMatterCrystalRecipes,
 } from './recipes/darkMatterCrystal';
 import { Diamonds, DiamondsRecipes } from './recipes/diamonds';
+import {
+  MagneticFieldGenerator,
+  MagneticFieldGeneratorRecipes,
+} from './recipes/magneticFieldGenerator';
+import {
+  AiExpansionServer,
+  AiExpansionServerRecipes,
+} from './recipes/aiExpansionServer';
+import {
+  BallisticWarpDrive,
+  BallisticWarpDriveRecipes,
+} from './recipes/ballisticWarpDrive';
+import {
+  SingularityCell,
+  SingularityCellRecipes,
+} from './recipes/singularityCell';
+import {
+  ThermalPropulsionRocket,
+  ThermalPropulsionRocketRecipes,
+} from './recipes/thermalPropulsionRocket';
+import {
+  BiochemicalSculptor,
+  BiochemicalSculptorRecipes,
+} from './recipes/biochemicalSculptor';
 
 /**
  * Non-bus production items. Always imported
@@ -221,10 +245,16 @@ export type BusItems =
  */
 export type SpaceElevatorItems =
   | typeof AdaptiveControlUnit
+  | typeof AiExpansionServer
   | typeof AssemblyDirectorSystem
   | typeof AutomatedWiring
+  | typeof BallisticWarpDrive
+  | typeof BiochemicalSculptor
+  | typeof MagneticFieldGenerator
   | typeof ModularEngine
+  | typeof SingularityCell
   | typeof SmartPlating
+  | typeof ThermalPropulsionRocket
   | typeof VersatileFramework;
 
 /**
@@ -246,12 +276,15 @@ export type Recipe = {
 
 export const AllRecipes: Recipe[] = [
   ...AdaptiveControlUnitRecipes,
+  ...AiExpansionServerRecipes,
   ...AiLimiterRecipes,
   ...AlcladAluminumSheetRecipes,
   ...AluminumCasingRecipes,
   ...AssemblyDirectorSystemRecipes,
   ...AutomatedWiringRecipes,
+  ...BallisticWarpDriveRecipes,
   ...BatteryRecipes,
+  ...BiochemicalSculptorRecipes,
   ...CableRecipes,
   ...CircuitBoardRecipes,
   ...ComputerRecipes,
@@ -271,6 +304,7 @@ export const AllRecipes: Recipe[] = [
   ...HighSpeedConnectorRecipes,
   ...IronPlateRecipes,
   ...IronRodRecipes,
+  ...MagneticFieldGeneratorRecipes,
   ...ModularEngineRecipes,
   ...ModularFrameRecipes,
   ...MotorRecipes,
@@ -282,12 +316,14 @@ export const AllRecipes: Recipe[] = [
   ...ReinforcedIronPlateRecipes,
   ...RotorRecipes,
   ...ScrewsRecipes,
+  ...SingularityCellRecipes,
   ...SmartPlatingRecipes,
   ...StatorRecipes,
   ...SteelBeamRecipes,
   ...SteelPipeRecipes,
   ...SupercomputerRecipes,
   ...SuperpositionOscillatorRecipes,
+  ...ThermalPropulsionRocketRecipes,
   ...TimeCrystalRecipes,
   ...TurboMotorRecipes,
   ...VersatileFrameworkRecipes,
@@ -327,12 +363,15 @@ export const AllImportItems: Item[] = [
 
 export const AllBusItems: Item[] = [
   AdaptiveControlUnit,
+  AiExpansionServer,
   AiLimiter,
   AlcladAluminumSheet,
   AluminumCasing,
   AssemblyDirectorSystem,
   AutomatedWiring,
+  BallisticWarpDrive,
   Battery,
+  BiochemicalSculptor,
   Cable,
   CircuitBoard,
   Computer,
@@ -352,6 +391,7 @@ export const AllBusItems: Item[] = [
   HighSpeedConnector,
   IronPlate,
   IronRod,
+  MagneticFieldGenerator,
   ModularEngine,
   ModularFrame,
   Motor,
@@ -363,12 +403,14 @@ export const AllBusItems: Item[] = [
   ReinforcedIronPlate,
   Rotor,
   Screws,
+  SingularityCell,
   SmartPlating,
   Stator,
   SteelBeam,
   SteelPipe,
   Supercomputer,
   SuperpositionOscillator,
+  ThermalPropulsionRocket,
   TimeCrystal,
   TurboMotor,
   VersatileFramework,
