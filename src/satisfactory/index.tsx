@@ -68,6 +68,8 @@ export function Satisfactory() {
         style={{
           gridArea: 'overview',
           textWrap: 'nowrap',
+          maxHeight: '1400px',
+          overflowY: 'scroll',
         }}
       >
         <h4>Production Overview</h4>
@@ -78,17 +80,22 @@ export function Satisfactory() {
       <div
         style={{
           gridArea: 'production',
-          maxHeight: '1300px',
+          maxHeight: '1400px',
           overflowY: 'scroll',
-          padding: '12px',
         }}
       >
-        <h4>
-          Production Blocks
-          <button onClick={addNewProductionRow}> Add New </button>
-        </h4>
+        <h4>Production Blocks</h4>
         <hr />
         {allProductionBlocks}
+
+        <button
+          style={{
+            margin: '12px 0 32px',
+          }}
+          onClick={addNewProductionRow}
+        >
+          Add New
+        </button>
       </div>
     </div>
   );
