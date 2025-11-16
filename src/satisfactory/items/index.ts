@@ -153,6 +153,7 @@ import {
   BiochemicalSculptor,
   BiochemicalSculptorRecipes,
 } from './recipes/biochemicalSculptor';
+import { SamFluctuator, SamFluctuatorRecipes } from './recipes/samFluctuator';
 
 /**
  * Non-bus production items. Always imported
@@ -227,6 +228,7 @@ export type BusItems =
   | typeof RadioControlUnit
   | typeof ReinforcedIronPlate
   | typeof Rotor
+  | typeof SamFluctuator
   | typeof Screws
   | typeof SmartPlating
   | typeof Stator
@@ -315,6 +317,7 @@ export const AllRecipes: Recipe[] = [
   ...RadioControlUnitRecipes,
   ...ReinforcedIronPlateRecipes,
   ...RotorRecipes,
+  ...SamFluctuatorRecipes,
   ...ScrewsRecipes,
   ...SingularityCellRecipes,
   ...SmartPlatingRecipes,
@@ -402,6 +405,7 @@ export const AllBusItems: Item[] = [
   RadioControlUnit,
   ReinforcedIronPlate,
   Rotor,
+  SamFluctuator,
   Screws,
   SingularityCell,
   SmartPlating,

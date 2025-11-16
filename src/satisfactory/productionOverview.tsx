@@ -81,6 +81,7 @@ export function ProductionOverview({
     'Reinforced Iron Plate': { produced: 0, consumed: 0 },
     Rotor: { produced: 0, consumed: 0 },
     Rubber: { produced: 0, consumed: 0 },
+    'SAM Fluctuator': { produced: 0, consumed: 0 },
     Screws: { produced: 0, consumed: 0 },
     Silica: { produced: 0, consumed: 0 },
     'Singularity Cell': { produced: 0, consumed: 0 },
