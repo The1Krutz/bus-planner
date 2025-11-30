@@ -1,5 +1,6 @@
 import type { Recipe } from '..';
-import { DarkMatterResidue, ExcitedPhotonicMatter } from './importOnlyItems';
+import { DarkMatterResidue } from './darkMatterResidue';
+import { ExcitedPhotonicMatter } from './importOnlyItems';
 import { MagneticFieldGenerator } from './magneticFieldGenerator';
 import { NeuralQuantumProcessor } from './neuralQuantumProcessor';
 import { SuperpositionOscillator } from './superpositionOscillator';

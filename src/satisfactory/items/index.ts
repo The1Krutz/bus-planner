@@ -101,7 +101,6 @@ import {
   Concrete,
   CopperIngot,
   CrudeOil,
-  DarkMatterResidue,
   ExcitedPhotonicMatter,
   Fuel,
   HeavyOilResidue,
@@ -154,6 +153,10 @@ import {
   BiochemicalSculptorRecipes,
 } from './recipes/biochemicalSculptor';
 import { SamFluctuator, SamFluctuatorRecipes } from './recipes/samFluctuator';
+import {
+  DarkMatterResidue,
+  DarkMatterResidueRecipes,
+} from './recipes/darkMatterResidue';
 
 /**
  * Non-bus production items. Always imported
@@ -166,7 +169,6 @@ export type ImportItems =
   | typeof Concrete
   | typeof CopperIngot
   | typeof CrudeOil
-  | typeof DarkMatterResidue
   | typeof ExcitedPhotonicMatter
   | typeof Fuel
   | typeof HeavyOilResidue
@@ -207,6 +209,7 @@ export type BusItems =
   | typeof CopperSheet
   | typeof CrystalOscillator
   | typeof DarkMatterCrystal
+  | typeof DarkMatterResidue
   | typeof Diamonds
   | typeof ElectromagneticControlRod
   | typeof EncasedIndustrialBeam
@@ -295,6 +298,7 @@ export const AllRecipes: Recipe[] = [
   ...CopperSheetRecipes,
   ...CrystalOscillatorRecipes,
   ...DarkMatterCrystalRecipes,
+  ...DarkMatterResidueRecipes,
   ...DiamondsRecipes,
   ...ElectromagneticControlRodRecipes,
   ...EncasedIndustrialBeamRecipes,
@@ -341,7 +345,6 @@ export const AllImportItems: Item[] = [
   Concrete,
   CopperIngot,
   CrudeOil,
-  DarkMatterResidue,
   ExcitedPhotonicMatter,
   Fuel,
   HeavyOilResidue,
@@ -383,6 +386,7 @@ export const AllBusItems: Item[] = [
   CopperSheet,
   CrystalOscillator,
   DarkMatterCrystal,
+  DarkMatterResidue,
   Diamonds,
   ElectromagneticControlRod,
   EncasedIndustrialBeam,

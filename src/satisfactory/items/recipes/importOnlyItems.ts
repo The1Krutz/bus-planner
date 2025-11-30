@@ -9,7 +9,6 @@ export const Coal = 'Coal';
 export const Concrete = 'Concrete';
 export const CopperIngot = 'Copper Ingot';
 export const CrudeOil = 'Crude Oil';
-export const DarkMatterResidue = 'Dark Matter Residue';
 export const ExcitedPhotonicMatter = 'Excited Photonic Matter';
 export const Fuel = 'Fuel';
 export const HeavyOilResidue = 'Heavy Oil Residue';

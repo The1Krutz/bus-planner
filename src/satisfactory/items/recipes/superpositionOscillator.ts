@@ -2,7 +2,8 @@ import type { Recipe } from '..';
 import { AlcladAluminumSheet } from './alcladAluminumSheet';
 import { CrystalOscillator } from './crystalOscillator';
 import { DarkMatterCrystal } from './darkMatterCrystal';
-import { DarkMatterResidue, ExcitedPhotonicMatter } from './importOnlyItems';
+import { DarkMatterResidue } from './darkMatterResidue';
+import { ExcitedPhotonicMatter } from './importOnlyItems';
 
 export const SuperpositionOscillator = 'Superposition Oscillator';
 

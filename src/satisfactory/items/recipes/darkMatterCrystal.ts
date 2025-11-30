@@ -1,6 +1,6 @@
 import type { Recipe } from '..';
+import { DarkMatterResidue } from './darkMatterResidue';
 import { Diamonds } from './diamonds';
-import { DarkMatterResidue } from './importOnlyItems';
 import { TimeCrystal } from './timeCrystal';
 
 export const DarkMatterCrystal = 'Dark Matter Crystal';

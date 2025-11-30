@@ -1,6 +1,7 @@
 import type { Recipe } from '..';
+import { DarkMatterResidue } from './darkMatterResidue';
 import { FicsiteTrigon } from './ficsiteTrigon';
-import { DarkMatterResidue, ExcitedPhotonicMatter } from './importOnlyItems';
+import { ExcitedPhotonicMatter } from './importOnlyItems';
 import { Supercomputer } from './supercomputer';
 import { TimeCrystal } from './timeCrystal';
 
@@ -12,7 +13,7 @@ export const NeuralQuantumProcessorRecipes: Recipe[] = [
     default: true,
     produces: [
       { item: NeuralQuantumProcessor, rate: 3 },
-      { item: DarkMatterResidue, rate: 3 },
+      { item: DarkMatterResidue, rate: 75 },
     ],
     consumes: [
       { item: TimeCrystal, rate: 15 },
